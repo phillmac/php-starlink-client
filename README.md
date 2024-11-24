@@ -1,4 +1,4 @@
-# gRPC Protoset Converter
+# Starlink PHP Client
 
 [![Latest Stable Version](https://poser.pugx.org/srwiez/starlink-client/v)](https://packagist.org/packages/srwiez/starlink-client)
 [![Total Downloads](https://poser.pugx.org/srwiez/starlink-client/downloads)](https://packagist.org/packages/srwiez/starlink-client)
@@ -40,7 +40,7 @@ This will run [pint](http://github.com/laravel/pint) (code style), [phpstan](htt
 
 ## 👥 Credits
 
-gRPC Protoset Converter was created by Eser DENIZ.
+Starlink PHP Client was created by Eser DENIZ.
 
 The following projects inspired this library and served as a reference:
 
@@ -50,4 +50,4 @@ The following projects inspired this library and served as a reference:
 
 ## 📝 License
 
-gRPC Protoset Converter is licensed under the MIT License. See LICENSE for more information.
+Starlink PHP Client is licensed under the MIT License. See LICENSE for more information.
