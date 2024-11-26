@@ -6,7 +6,11 @@
 [![PHP Version Require](https://poser.pugx.org/srwiez/starlink-client/require/php)](https://packagist.org/packages/srwiez/starlink-client)
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/srwiez/php-starlink-client/test.yml?label=Tests)](https://github.com/srwiez/php-starlink-client/actions/workflows/test.yml)
 
-WIP WIP WIP WIP WIP WIP WIP WIP
+A PHP client for the Starlink Dish antenna device.
+
+This client uses the local network gRPC API based on the Starlink protoset from the reflection service of the Starlink device.
+
+This client is not affiliated with SpaceX or Starlink.
 
 ## 🚀 Installation
 
@@ -15,16 +19,101 @@ composer require srwiez/starlink-client
 ```
 
 ## 📚 Usage
+You can use the `SRWieZ\StarlinkClient\Dishy` class to interact with your Starlink device.
+
+### Getting the status
+Get all the information about the device.
+```php 
+use SRWieZ\StarlinkClient\Dishy;
+
+$dishy = new Dishy('192.168.100.1:9200');
+$infos = $dishy->getStatus();
+```
+
+Get the obstruction map
+```php
+$obstructionMap = $dishy->getObstructionMap();
+```
+
+Get the sleep/powersave configuration
+```php
+$sleepConfig = $dishy->getSleepModeConfig();
+```
+
+Get history of the following statistics:
+- Ping drop rate
+- Ping Latency
+- Download speed
+- Upload speed
+- Power usage
+
+```php
+$statistics = $dishy->getStatsHistory();
+```
+
+Get the location of the dish. If enabled in the settings of the mobile app, you can get the location of the dish.
+```php
+$location = $dishy->getLocation();
+```
+
+### Send a command
+Control the dish by sending commands. Commands that are available by this unauthenticated client are:
+
+```php
+use SRWieZ\StarlinkClient\Dishy;
+
+$dishy = new Dishy('192.168.100.1:9200');
+
+// Reboot the dish
+$dishy->reboot();
+
+// Stow the dish
+$dishy->stow();
+
+// Unstow the dish
+$dishy->unstow();
+
+// Reset obstruction map
+$dishy->resetObstructionMap();
+
+// Enable power save mode
+$dishy->setSleepModeConfig(
+    start: 60, // 01:00
+    duration: 120, // 03:00
+);
+
+// Disable power save mode
+$dishy->disableSleepMode();
+```
+
+### Advanced usage
+If you prefer to use the gRPC client directly, you can use the generated `DeviceClient` class.
+
+```php
+use SpaceX\API\Device\DeviceClient;
+use Grpc\ChannelCredentials;
+use SpaceX\API\Device\GetStatusRequest;
+
+$client = new DeviceClient('192.168.100.1:9200', [
+    'credentials' => ChannelCredentials::createInsecure(),
+]);
+
+[$response, $status] = $client->Handle(
+    new Request(['get_status' => new GetStatusRequest()])
+)->wait();
+```
 
 ## 📋 TODO
 Contributions are welcome!
 
-- Write tests by using the starlink protoset file
+- Add tests for static functions.
+- Create a script to generate proper enums and parse the values in the response to return those enums.
+- Implement the authentication web API used by the mobile app to gain more control over the dish (e.g., snow melt mode, etc.).
 
 ## 🧑‍🔧 Building the client
 If you have a starlink in your local network, you can update the client by running the following command.
 
-Before running the command, make sure you have the `grpcurl` and `protoc` installed on your system.
+Before running the command, make sure you have the `grpcurl`,  `protoc` and `grpc_php_plugin` installed on your system.
 
 ```bash
 ./update_client.sh

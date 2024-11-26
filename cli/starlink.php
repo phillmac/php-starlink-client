@@ -7,6 +7,20 @@ if (! class_exists('\Composer\InstalledVersions')) {
     require __DIR__.'/../vendor/autoload.php';
 }
 
+if (class_exists('\NunoMaduro\Collision\Provider')) {
+    (new \NunoMaduro\Collision\Provider)->register();
+}
+
+$dishy = new \SRWieZ\StarlinkClient\Dishy;
+
+dump($dishy->getStatus());
+// dump($dishy->getObstructionMap());
+// $dishy->setSleepModeConfig(
+//     start: 120,
+//     duration: 2,
+// );
+// dump($dishy->getStatus());
+
 /*
  * TODO: Some basic function to:
  *  - get the obstruction map

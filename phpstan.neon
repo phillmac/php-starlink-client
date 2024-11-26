@@ -7,5 +7,7 @@ parameters:
         - src
         - cli
 #        - tests
+
     ignoreErrors:
-#        -
+        -
+            identifier: missingType.iterableValue
