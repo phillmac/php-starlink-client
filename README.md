@@ -6,7 +6,7 @@
 [![PHP Version Require](https://poser.pugx.org/srwiez/starlink-client/require/php)](https://packagist.org/packages/srwiez/starlink-client)
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/srwiez/php-starlink-client/test.yml?label=Tests)](https://github.com/srwiez/php-starlink-client/actions/workflows/test.yml)
 
-A PHP client for the Starlink Dish antenna device.
+A PHP client to get information and control the Starlink user terminal (aka the antenna or dishy) on your local network.
 
 This client uses the local network gRPC API based on the Starlink protoset from the reflection service of the Starlink device.
 
@@ -125,6 +125,8 @@ Clone the project and run `composer update` to install the dependencies.
 Before pushing your changes, run `composer qa`. 
 
 This will run [pint](http://github.com/laravel/pint) (code style), [phpstan](http://github.com/phpstan/phpstan) (static analysis), and [pest](http://github.com/pestphp/pest) (tests).
+
+Additionally, if you have a Starlink dish on your local network, you can update the gRPC client by running `./update_client.sh`. This command will update everything under the `SpaceX` namespace. After that, run `composer qa` to ensure everything is still functioning properly. If everything is fine and new functionality has been published by the gRPC reflection service, you can submit a pull request for your changes.
 
 
 ## 👥 Credits
