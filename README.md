@@ -57,7 +57,7 @@ $location = $dishy->getLocation();
 ```
 
 ### Send a command
-Control the dish by sending commands. Commands that are available by this unauthenticated client are:
+Using the local gRPC API, you can send a limited set of commands to the user terminal. These commands are all listed below. 
 
 ```php
 use SRWieZ\StarlinkClient\Dishy;
