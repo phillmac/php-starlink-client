@@ -8,7 +8,9 @@
 
 PHP client to monitor and control your Starlink dish via the local gRPC API. 
 
-This client uses the gRPC API of your Starlink device. API classes are generated based on the protoset file extracted from the reflection service of the Starlink device. This client is not affiliated with SpaceX or Starlink.
+This client uses the gRPC API of your Starlink device. API classes are generated based on the protoset file extracted from the reflection service of the Starlink device. 
+
+This client is not affiliated with SpaceX or Starlink.
 
 It also comes with an obstruction map generator to visualize the obstruction map of the dish.
 
