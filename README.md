@@ -6,16 +6,14 @@
 [![PHP Version Require](https://poser.pugx.org/srwiez/starlink-client/require/php)](https://packagist.org/packages/srwiez/starlink-client)
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/srwiez/php-starlink-client/test.yml?label=Tests)](https://github.com/srwiez/php-starlink-client/actions/workflows/test.yml)
 
-A PHP client to get information and control the Starlink user terminal (aka the antenna or dishy) on your local network.
+A PHP client to get infos from Starlink user terminal on your local network. 
 
-This client uses the local network gRPC API based on the Starlink protoset from the reflection service of the Starlink device.
-
-Here are some examples of what's possible 🤩
+This client uses the local network gRPC API based on the Starlink protoset from the reflection service of the Starlink device. This client is not affiliated with SpaceX or Starlink.
 
 ![Obstruction map grayscale](assets/obstruction_map_grayscale.png)
 ![Obstruction map](assets/obstruction_map.png)
 
-This client is not affiliated with SpaceX or Starlink.
+It also comes with an `ObstructionMapGenerator` to generate these images.
 
 ## 🚀 Installation
 
