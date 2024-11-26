@@ -10,8 +10,10 @@ A PHP client to get information and control the Starlink user terminal (aka the 
 
 This client uses the local network gRPC API based on the Starlink protoset from the reflection service of the Starlink device.
 
-![Obstruction map](assets/obstruction_map.png)
+Here are some examples of what's possible 🤩
+
 ![Obstruction map grayscale](assets/obstruction_map_grayscale.png)
+![Obstruction map](assets/obstruction_map.png)
 
 This client is not affiliated with SpaceX or Starlink.
 
@@ -70,9 +72,8 @@ $obstructionMap = $dishy->getObstructionMap();
     ->generate()
     ->asFile('assets/obstruction_map.png');
 
-// Grayscale image
 (new ObstructionMapGenerator($obsMap))
-    ->transparent()
+    ->transparent(false)
     ->grayscale()
     ->opacity(0.95)
     ->generate()

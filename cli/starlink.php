@@ -32,7 +32,7 @@ $obsMap = $dishy->getObstructionMap();
     ->asFile('assets/obstruction_map.png');
 
 (new ObstructionMapGenerator($obsMap))
-    ->transparent()
+    ->transparent(false)
     ->grayscale()
     ->opacity(0.95)
     ->generate()
