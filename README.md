@@ -107,7 +107,6 @@ $client = new DeviceClient('192.168.100.1:9200', [
 Contributions are welcome!
 
 - Obstruction map image generation
-- Stream the status/statistics
 - CLI tool / examples
 - Add more tests
 - Create a script to generate proper enums and parse the values in the response to return those enums.
