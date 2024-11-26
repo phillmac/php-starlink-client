@@ -10,6 +10,9 @@ A PHP client to get information and control the Starlink user terminal (aka the 
 
 This client uses the local network gRPC API based on the Starlink protoset from the reflection service of the Starlink device.
 
+![Obstruction map](assets/obstruction_map.png)
+![Obstruction map grayscale](assets/obstruction_map_grayscale.png)
+
 This client is not affiliated with SpaceX or Starlink.
 
 ## 🚀 Installation
@@ -28,11 +31,6 @@ use SRWieZ\StarlinkClient\Dishy;
 
 $dishy = new Dishy('192.168.100.1:9200');
 $infos = $dishy->getStatus();
-```
-
-Get the obstruction map
-```php
-$obstructionMap = $dishy->getObstructionMap();
 ```
 
 Get the sleep/powersave configuration
@@ -55,6 +53,32 @@ If enabled in the settings of the mobile app, you can get the location of the di
 ```php
 $location = $dishy->getLocation();
 ```
+
+### Generate the obstruction map
+You can obtain the obstruction map of the dish. For more information about the representation of each pixel in the data, refer to [this link](https://github.com/sparky8512/starlink-grpc-tools/blob/main/dish_obstruction_map.py).
+```php
+use SRWieZ\StarlinkClient\Dishy;
+
+$dishy = new Dishy('192.168.100.1:9200');
+
+// Get the obstruction map
+$obstructionMap = $dishy->getObstructionMap();
+
+// Colored image
+(new ObstructionMapGenerator($obsMap))
+    ->transparent()
+    ->generate()
+    ->asFile('assets/obstruction_map.png');
+
+// Grayscale image
+(new ObstructionMapGenerator($obsMap))
+    ->transparent()
+    ->grayscale()
+    ->opacity(0.95)
+    ->generate()
+    ->asFile('assets/obstruction_map_grayscale.png');
+```
+See result in the [assets](assets) folder or the images above.
 
 ### Send a command
 Using the local gRPC API, you can send a limited set of commands to the user terminal. These commands are all listed below. 

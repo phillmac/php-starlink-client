@@ -2,6 +2,7 @@
 <?php
 
 use SRWieZ\StarlinkClient\Dishy;
+use SRWieZ\StarlinkClient\ObstructionMapGenerator;
 
 error_reporting(E_ALL ^ E_DEPRECATED ^ E_NOTICE);
 
@@ -15,13 +16,27 @@ if (class_exists('\NunoMaduro\Collision\Provider')) {
 
 $dishy = new Dishy;
 
-dump($dishy->getStatus());
+// dump($dishy->getStatus());
 // dump($dishy->getObstructionMap());
 // $dishy->setSleepModeConfig(
 //     start: 120,
 //     duration: 2,
 // );
 // dump($dishy->getStatus());
+
+$obsMap = $dishy->getObstructionMap();
+
+(new ObstructionMapGenerator($obsMap))
+    ->transparent()
+    ->generate()
+    ->asFile('assets/obstruction_map.png');
+
+(new ObstructionMapGenerator($obsMap))
+    ->transparent()
+    ->grayscale()
+    ->opacity(0.95)
+    ->generate()
+    ->asFile('assets/obstruction_map_grayscale.png');
 
 /*
  * TODO: Some basic function to:
