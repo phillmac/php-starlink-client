@@ -10,10 +10,10 @@ A PHP client to get infos from Starlink user terminal on your local network.
 
 This client uses the local network gRPC API based on the Starlink protoset from the reflection service of the Starlink device. This client is not affiliated with SpaceX or Starlink.
 
+It also comes with an obstruction map generator to visualize the obstruction map of the dish.
+
 ![Obstruction map grayscale](assets/obstruction_map_grayscale.png)
 ![Obstruction map](assets/obstruction_map.png)
-
-It also comes with an obstruction map generator to visualize the obstruction map of the dish.
 
 ## 🚀 Installation
 
