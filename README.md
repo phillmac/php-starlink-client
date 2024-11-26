@@ -51,7 +51,7 @@ Get history of the following statistics:
 $statistics = $dishy->getStatsHistory();
 ```
 
-Get the location of the dish. If enabled in the settings of the mobile app, you can get the location of the dish.
+If enabled in the settings of the mobile app, you can get the location of the dish.
 ```php
 $location = $dishy->getLocation();
 ```
@@ -106,7 +106,7 @@ $client = new DeviceClient('192.168.100.1:9200', [
 ## 📋 TODO
 Contributions are welcome!
 
-- Add tests for static functions.
+- Add more tests
 - Create a script to generate proper enums and parse the values in the response to return those enums.
 - Implement the authentication web API used by the mobile app to gain more control over the dish (e.g., snow melt mode, etc.).
 
