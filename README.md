@@ -18,7 +18,7 @@ It also comes with an obstruction map generator to visualize the obstruction map
 ![Obstruction map](assets/obstruction_map.png)
 
 ## 🚀 Installation
-
+This package can be installed via composer, be aware that you need to have the `grpc` extension installed on your system.
 ```bash
 composer require srwiez/starlink-client
 ```
