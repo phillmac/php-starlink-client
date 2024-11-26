@@ -5,4 +5,5 @@
 tests/ export-ignore
 examples/ export-ignore
 assets/ export-ignore
+proto/ export-ignore
 
