@@ -1,6 +1,8 @@
 #!/usr/bin/env php
 <?php
 
+use SRWieZ\StarlinkClient\Dishy;
+
 error_reporting(E_ALL ^ E_DEPRECATED ^ E_NOTICE);
 
 if (! class_exists('\Composer\InstalledVersions')) {
@@ -11,7 +13,7 @@ if (class_exists('\NunoMaduro\Collision\Provider')) {
     (new \NunoMaduro\Collision\Provider)->register();
 }
 
-$dishy = new \SRWieZ\StarlinkClient\Dishy;
+$dishy = new Dishy;
 
 dump($dishy->getStatus());
 // dump($dishy->getObstructionMap());
@@ -28,4 +30,5 @@ dump($dishy->getStatus());
  *  - reboot, stow, unstow the dish
  *  - set the sleep mode
  *  - get gps location
+ *  - update the dish (send reboot if update is pending)
  */

@@ -106,6 +106,9 @@ $client = new DeviceClient('192.168.100.1:9200', [
 ## 📋 TODO
 Contributions are welcome!
 
+- Obstruction map image generation
+- Stream the status/statistics
+- CLI tool / examples
 - Add more tests
 - Create a script to generate proper enums and parse the values in the response to return those enums.
 - Implement the authentication web API used by the mobile app to gain more control over the dish (e.g., snow melt mode, etc.).
