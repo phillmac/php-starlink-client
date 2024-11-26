@@ -6,7 +6,7 @@
 [![PHP Version Require](https://poser.pugx.org/srwiez/starlink-client/require/php)](https://packagist.org/packages/srwiez/starlink-client)
 [![GitHub Workflow Status (with event)](https://img.shields.io/github/actions/workflow/status/srwiez/php-starlink-client/test.yml?label=Tests)](https://github.com/srwiez/php-starlink-client/actions/workflows/test.yml)
 
-A PHP client to get infos from Starlink user terminal on your local network. 
+PHP client to monitor and control your Starlink dish via the local gRPC API. 
 
 This client uses the local network gRPC API based on the Starlink protoset from the reflection service of the Starlink device. This client is not affiliated with SpaceX or Starlink.
 
