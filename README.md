@@ -13,7 +13,7 @@ This client uses the local network gRPC API based on the Starlink protoset from 
 ![Obstruction map grayscale](assets/obstruction_map_grayscale.png)
 ![Obstruction map](assets/obstruction_map.png)
 
-It also comes with an `ObstructionMapGenerator` to generate these images.
+It also comes with an obstruction map generator to visualize the obstruction map of the dish.
 
 ## 🚀 Installation
 
