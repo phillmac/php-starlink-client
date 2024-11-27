@@ -64,15 +64,15 @@ use SRWieZ\StarlinkClient\Dishy;
 $dishy = new Dishy('192.168.100.1:9200');
 
 // Get the obstruction map
-$obstructionMap = $dishy->getObstructionMap();
+$data = $dishy->getObstructionMap();
 
 // Colored image
-(new ObstructionMapGenerator($obsMap))
+(new ObstructionMapGenerator($data))
     ->transparent()
     ->generate()
     ->asFile('assets/obstruction_map.png');
 
-(new ObstructionMapGenerator($obsMap))
+(new ObstructionMapGenerator($data))
     ->transparent(false)
     ->grayscale()
     ->opacity(0.95)
