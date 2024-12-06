@@ -59,6 +59,11 @@ class DishGetDiagnosticsResponse extends \Google\Protobuf\Internal\Message
     protected $alignment_stats = null;
 
     /**
+     * Generated from protobuf field <code>optional bool stowed = 10 [json_name = "stowed"];</code>
+     */
+    protected $stowed = null;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -73,7 +78,8 @@ class DishGetDiagnosticsResponse extends \Google\Protobuf\Internal\Message
      * @type int $disablement_code
      * @type \SpaceX\API\Device\DishGetDiagnosticsResponse\Location $location
      * @type \SpaceX\API\Device\DishGetDiagnosticsResponse\AlignmentStats $alignment_stats
-     *                                                                    }
+     * @type bool $stowed
+     *            }
      */
     public function __construct($data = null)
     {
@@ -383,6 +389,40 @@ class DishGetDiagnosticsResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \SpaceX\API\Device\DishGetDiagnosticsResponse\AlignmentStats::class);
         $this->alignment_stats = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool stowed = 10 [json_name = "stowed"];</code>
+     *
+     * @return bool
+     */
+    public function getStowed()
+    {
+        return isset($this->stowed) ? $this->stowed : false;
+    }
+
+    public function hasStowed()
+    {
+        return isset($this->stowed);
+    }
+
+    public function clearStowed()
+    {
+        unset($this->stowed);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool stowed = 10 [json_name = "stowed"];</code>
+     *
+     * @param  bool  $var
+     * @return $this
+     */
+    public function setStowed($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->stowed = $var;
 
         return $this;
     }

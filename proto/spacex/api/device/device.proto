@@ -633,6 +633,7 @@ message DishGetDiagnosticsResponse {
 	optional 	.SpaceX.API.Device.DishGetDiagnosticsResponse.DisablementCode disablement_code = 6 [json_name="disablementCode"];
 	optional 	.SpaceX.API.Device.DishGetDiagnosticsResponse.Location location = 8 [json_name="location"];
 	optional 	.SpaceX.API.Device.DishGetDiagnosticsResponse.AlignmentStats alignment_stats = 9 [json_name="alignmentStats"];
+	optional 	bool stowed = 10 [json_name="stowed"];
 message Alerts {
 	optional 	bool dish_is_heating = 1 [json_name="dishIsHeating"];
 	optional 	bool dish_thermal_throttle = 2 [json_name="dishThermalThrottle"];
