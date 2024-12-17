@@ -195,6 +195,7 @@ message Network {
 	optional 	bool internal = 1013 [json_name="internal"];
 	optional 	uint32 vlan = 1014 [json_name="vlan"];
 	optional 	.SpaceX.API.Device.CaptivePortal captive_portal = 1024 [json_name="captivePortal"];
+	optional 	uint32 network_groups = 1026 [json_name="networkGroups"];
 }
 
 	enum Security {

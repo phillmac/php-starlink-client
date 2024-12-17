@@ -99,6 +99,11 @@ class Network extends \Google\Protobuf\Internal\Message
     protected $captive_portal = null;
 
     /**
+     * Generated from protobuf field <code>optional uint32 network_groups = 1026 [json_name = "networkGroups"];</code>
+     */
+    protected $network_groups = null;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -121,7 +126,8 @@ class Network extends \Google\Protobuf\Internal\Message
      * @type bool $internal
      * @type int $vlan
      * @type \SpaceX\API\Device\CaptivePortal $captive_portal
-     *                                        }
+     * @type int $network_groups
+     *           }
      */
     public function __construct($data = null)
     {
@@ -683,6 +689,40 @@ class Network extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \SpaceX\API\Device\CaptivePortal::class);
         $this->captive_portal = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 network_groups = 1026 [json_name = "networkGroups"];</code>
+     *
+     * @return int
+     */
+    public function getNetworkGroups()
+    {
+        return isset($this->network_groups) ? $this->network_groups : 0;
+    }
+
+    public function hasNetworkGroups()
+    {
+        return isset($this->network_groups);
+    }
+
+    public function clearNetworkGroups()
+    {
+        unset($this->network_groups);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 network_groups = 1026 [json_name = "networkGroups"];</code>
+     *
+     * @param  int  $var
+     * @return $this
+     */
+    public function setNetworkGroups($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->network_groups = $var;
 
         return $this;
     }

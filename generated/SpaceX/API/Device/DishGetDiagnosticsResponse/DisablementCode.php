@@ -73,6 +73,11 @@ class DisablementCode
      */
     const ACCOUNT_DISABLED = 12;
 
+    /**
+     * Generated from protobuf enum <code>UNSUPPORTED_VERSION = 13;</code>
+     */
+    const UNSUPPORTED_VERSION = 13;
+
     private static $valueToName = [
         self::UNKNOWN => 'UNKNOWN',
         self::OKAY => 'OKAY',
@@ -86,6 +91,7 @@ class DisablementCode
         self::ROAM_RESTRICTED => 'ROAM_RESTRICTED',
         self::UNKNOWN_LOCATION => 'UNKNOWN_LOCATION',
         self::ACCOUNT_DISABLED => 'ACCOUNT_DISABLED',
+        self::UNSUPPORTED_VERSION => 'UNSUPPORTED_VERSION',
     ];
 
     public static function name($value)
