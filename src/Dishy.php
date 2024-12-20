@@ -5,7 +5,6 @@ namespace SRWieZ\StarlinkClient;
 use const Grpc\STATUS_OK;
 use const Grpc\STATUS_PERMISSION_DENIED;
 
-use DateTime;
 use Google\Protobuf\Internal\Message;
 use Grpc\ChannelCredentials;
 use SpaceX\API\Device\DeviceClient;
