@@ -32,7 +32,7 @@ class Dishy
 
     public function __construct(
         public string $host = '192.168.100.1:9200',
-        public int $timeout = 2,
+        public int $timeout = 3,
     ) {
         // Create a generic stub
         $this->client = new DeviceClient($this->host, [
@@ -66,9 +66,8 @@ class Dishy
     {
         $options = [];
 
-        if (! is_null($timeout)) {
-            $options['timeout'] = (new DateTime)->modify("+{$timeout} seconds")->format('U.u');
-        }
+        $timeout = $timeout ?? $this->timeout;
+        $options['timeout'] = (new DateTime)->modify("+{$timeout} seconds")->format('U.u');
 
         /** @var Response $response */
         /** @var object{code: int, details: string, metadata:array} $status */
