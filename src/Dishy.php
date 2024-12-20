@@ -32,12 +32,11 @@ class Dishy
 
     public function __construct(
         public string $host = '192.168.100.1:9200',
-        public int $timeout = 3,
+        public float $timeout = 1.0,
     ) {
         // Create a generic stub
         $this->client = new DeviceClient($this->host, [
             'credentials' => ChannelCredentials::createInsecure(),
-            'timeout' => $this->timeout,
         ]);
     }
 
@@ -64,10 +63,9 @@ class Dishy
      */
     public function handle(Message $request, ?int $timeout = null): Response
     {
-        $options = [];
-
-        $timeout = $timeout ?? $this->timeout;
-        $options['timeout'] = (new DateTime)->modify("+{$timeout} seconds")->format('U.u');
+        $options = [
+            'timeout' => intval(($timeout ?? $this->timeout) * 1000 * 1000), // Convert seconds to microseconds
+        ];
 
         /** @var Response $response */
         /** @var object{code: int, details: string, metadata:array} $status */
