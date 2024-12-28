@@ -589,6 +589,16 @@ class WifiConfig extends \Google\Protobuf\Internal\Message
     protected $apply_disable_band_steering = null;
 
     /**
+     * Generated from protobuf field <code>repeated string only_overflight_countries = 1110 [json_name = "onlyOverflightCountries"];</code>
+     */
+    private $only_overflight_countries;
+
+    /**
+     * Generated from protobuf field <code>optional bool apply_only_overflight_countries = 1111 [json_name = "applyOnlyOverflightCountries"];</code>
+     */
+    protected $apply_only_overflight_countries = null;
+
+    /**
      * Generated from protobuf field <code>optional uint32 tag = 78 [json_name = "tag"];</code>
      */
     protected $tag = null;
@@ -714,6 +724,8 @@ class WifiConfig extends \Google\Protobuf\Internal\Message
      * @type bool $apply_asset_class
      * @type bool $disable_band_steering
      * @type bool $apply_disable_band_steering
+     * @type array<string>|\Google\Protobuf\Internal\RepeatedField $only_overflight_countries
+     * @type bool $apply_only_overflight_countries
      * @type int $tag
      *           }
      */
@@ -4559,6 +4571,64 @@ class WifiConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->apply_disable_band_steering = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string only_overflight_countries = 1110 [json_name = "onlyOverflightCountries"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getOnlyOverflightCountries()
+    {
+        return $this->only_overflight_countries;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string only_overflight_countries = 1110 [json_name = "onlyOverflightCountries"];</code>
+     *
+     * @param  array<string>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setOnlyOverflightCountries($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->only_overflight_countries = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool apply_only_overflight_countries = 1111 [json_name = "applyOnlyOverflightCountries"];</code>
+     *
+     * @return bool
+     */
+    public function getApplyOnlyOverflightCountries()
+    {
+        return isset($this->apply_only_overflight_countries) ? $this->apply_only_overflight_countries : false;
+    }
+
+    public function hasApplyOnlyOverflightCountries()
+    {
+        return isset($this->apply_only_overflight_countries);
+    }
+
+    public function clearApplyOnlyOverflightCountries()
+    {
+        unset($this->apply_only_overflight_countries);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool apply_only_overflight_countries = 1111 [json_name = "applyOnlyOverflightCountries"];</code>
+     *
+     * @param  bool  $var
+     * @return $this
+     */
+    public function setApplyOnlyOverflightCountries($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->apply_only_overflight_countries = $var;
 
         return $this;
     }

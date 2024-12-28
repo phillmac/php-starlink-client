@@ -189,6 +189,16 @@ class DishGetStatusResponse extends \Google\Protobuf\Internal\Message
     protected $plc_stats = null;
 
     /**
+     * Generated from protobuf field <code>optional bool is_moving_fast_persisted = 1042 [json_name = "isMovingFastPersisted"];</code>
+     */
+    protected $is_moving_fast_persisted = null;
+
+    /**
+     * Generated from protobuf field <code>optional .SpaceX.API.Device.DishUpsuStats upsu_stats = 1043 [json_name = "upsuStats"];</code>
+     */
+    protected $upsu_stats = null;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -229,7 +239,9 @@ class DishGetStatusResponse extends \Google\Protobuf\Internal\Message
      * @type bool $high_power_test_mode
      * @type array<string>|\Google\Protobuf\Internal\RepeatedField $connected_routers
      * @type \SpaceX\API\Device\PLCStats $plc_stats
-     *                                   }
+     * @type bool $is_moving_fast_persisted
+     * @type \SpaceX\API\Device\DishUpsuStats $upsu_stats
+     *                                        }
      */
     public function __construct($data = null)
     {
@@ -1413,6 +1425,74 @@ class DishGetStatusResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \SpaceX\API\Device\PLCStats::class);
         $this->plc_stats = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool is_moving_fast_persisted = 1042 [json_name = "isMovingFastPersisted"];</code>
+     *
+     * @return bool
+     */
+    public function getIsMovingFastPersisted()
+    {
+        return isset($this->is_moving_fast_persisted) ? $this->is_moving_fast_persisted : false;
+    }
+
+    public function hasIsMovingFastPersisted()
+    {
+        return isset($this->is_moving_fast_persisted);
+    }
+
+    public function clearIsMovingFastPersisted()
+    {
+        unset($this->is_moving_fast_persisted);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool is_moving_fast_persisted = 1042 [json_name = "isMovingFastPersisted"];</code>
+     *
+     * @param  bool  $var
+     * @return $this
+     */
+    public function setIsMovingFastPersisted($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->is_moving_fast_persisted = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .SpaceX.API.Device.DishUpsuStats upsu_stats = 1043 [json_name = "upsuStats"];</code>
+     *
+     * @return \SpaceX\API\Device\DishUpsuStats|null
+     */
+    public function getUpsuStats()
+    {
+        return $this->upsu_stats;
+    }
+
+    public function hasUpsuStats()
+    {
+        return isset($this->upsu_stats);
+    }
+
+    public function clearUpsuStats()
+    {
+        unset($this->upsu_stats);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .SpaceX.API.Device.DishUpsuStats upsu_stats = 1043 [json_name = "upsuStats"];</code>
+     *
+     * @param  \SpaceX\API\Device\DishUpsuStats  $var
+     * @return $this
+     */
+    public function setUpsuStats($var)
+    {
+        GPBUtil::checkMessage($var, \SpaceX\API\Device\DishUpsuStats::class);
+        $this->upsu_stats = $var;
 
         return $this;
     }

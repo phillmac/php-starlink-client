@@ -242,7 +242,7 @@ message WifiClient {
 	optional 	.SpaceX.API.Device.WifiClient.PingMetrics ping_metrics = 40 [json_name="pingMetrics"];
 	optional 	bool blocked = 42 [json_name="blocked"];
 	optional 	uint32 client_id = 43 [json_name="clientId"];
-	optional 	string sandbox_client_id = 51 [json_name="sandboxClientId"];
+	optional 	string captive_client_id = 53 [json_name="captiveClientId"];
 	optional 	.SpaceX.API.Device.WifiClient.FqcodelInfo fqcodel_info = 44 [json_name="fqcodelInfo"];
 	optional 	.SpaceX.API.Device.WifiClient.Alerts alerts = 52 [json_name="alerts"];
 message RxStats {

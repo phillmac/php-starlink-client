@@ -44,6 +44,11 @@ class Location extends \Google\Protobuf\Internal\Message
     protected $uncertainty_meters = null;
 
     /**
+     * Generated from protobuf field <code>optional double gps_time_s = 7 [json_name = "gpsTimeS"];</code>
+     */
+    protected $gps_time_s = null;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -55,6 +60,7 @@ class Location extends \Google\Protobuf\Internal\Message
      * @type float $altitude_meters
      * @type bool $uncertainty_meters_valid
      * @type float $uncertainty_meters
+     * @type float $gps_time_s
      *             }
      */
     public function __construct($data = null)
@@ -263,6 +269,40 @@ class Location extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkDouble($var);
         $this->uncertainty_meters = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional double gps_time_s = 7 [json_name = "gpsTimeS"];</code>
+     *
+     * @return float
+     */
+    public function getGpsTimeS()
+    {
+        return isset($this->gps_time_s) ? $this->gps_time_s : 0.0;
+    }
+
+    public function hasGpsTimeS()
+    {
+        return isset($this->gps_time_s);
+    }
+
+    public function clearGpsTimeS()
+    {
+        unset($this->gps_time_s);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional double gps_time_s = 7 [json_name = "gpsTimeS"];</code>
+     *
+     * @param  float  $var
+     * @return $this
+     */
+    public function setGpsTimeS($var)
+    {
+        GPBUtil::checkDouble($var);
+        $this->gps_time_s = $var;
 
         return $this;
     }

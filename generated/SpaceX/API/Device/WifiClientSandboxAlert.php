@@ -14,24 +14,30 @@ use UnexpectedValueException;
 class WifiClientSandboxAlert
 {
     /**
-     * Generated from protobuf enum <code>LANDING_PAGE_DOWN = 0;</code>
+     * Generated from protobuf enum <code>SANDBOX_ALERT_UNKNOWN = 0;</code>
      */
-    const LANDING_PAGE_DOWN = 0;
+    const SANDBOX_ALERT_UNKNOWN = 0;
 
     /**
-     * Generated from protobuf enum <code>SANDBOX_API_DOWN_GROUND = 1;</code>
+     * Generated from protobuf enum <code>SANDBOX_ALERT_PORTAL = 1;</code>
      */
-    const SANDBOX_API_DOWN_GROUND = 1;
+    const SANDBOX_ALERT_PORTAL = 1;
 
     /**
-     * Generated from protobuf enum <code>SANDBOX_API_DOWN_STARLINK = 2;</code>
+     * Generated from protobuf enum <code>SANDBOX_ALERT_GROUND_API = 2;</code>
      */
-    const SANDBOX_API_DOWN_STARLINK = 2;
+    const SANDBOX_ALERT_GROUND_API = 2;
+
+    /**
+     * Generated from protobuf enum <code>SANDBOX_ALERT_STARLINK_API = 3;</code>
+     */
+    const SANDBOX_ALERT_STARLINK_API = 3;
 
     private static $valueToName = [
-        self::LANDING_PAGE_DOWN => 'LANDING_PAGE_DOWN',
-        self::SANDBOX_API_DOWN_GROUND => 'SANDBOX_API_DOWN_GROUND',
-        self::SANDBOX_API_DOWN_STARLINK => 'SANDBOX_API_DOWN_STARLINK',
+        self::SANDBOX_ALERT_UNKNOWN => 'SANDBOX_ALERT_UNKNOWN',
+        self::SANDBOX_ALERT_PORTAL => 'SANDBOX_ALERT_PORTAL',
+        self::SANDBOX_ALERT_GROUND_API => 'SANDBOX_ALERT_GROUND_API',
+        self::SANDBOX_ALERT_STARLINK_API => 'SANDBOX_ALERT_STARLINK_API',
     ];
 
     public static function name($value)

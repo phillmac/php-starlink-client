@@ -28,6 +28,7 @@ message HttpServer {
 	optional 	string domain_name = 1 [json_name="domainName"];
 	optional 	.SpaceX.API.Device.TlsConfig tls = 2 [json_name="tls"];
 	optional 	string file_content_id = 3 [json_name="fileContentId"];
+	optional 	string file_content_hash = 4 [json_name="fileContentHash"];
 }
 
 message CaptivePortal {
@@ -151,6 +152,8 @@ message WifiConfig {
 	optional 	bool apply_asset_class = 1099 [json_name="applyAssetClass"];
 	optional 	bool disable_band_steering = 95 [json_name="disableBandSteering"];
 	optional 	bool apply_disable_band_steering = 1109 [json_name="applyDisableBandSteering"];
+	repeated 	string only_overflight_countries = 1110 [json_name="onlyOverflightCountries"];
+	optional 	bool apply_only_overflight_countries = 1111 [json_name="applyOnlyOverflightCountries"];
 	optional 	uint32 tag = 78 [json_name="tag"];
 message MeshConfigsEntry {
 	optional 	string key = 1 [json_name="key"];
@@ -177,6 +180,16 @@ message BasicServiceSet {
 	optional 	bool hidden = 1015 [json_name="hidden"];
 }
 
+message DnsStaticEntry {
+	repeated 	string domains = 1000 [json_name="domains"];
+	repeated 	string addresses = 1001 [json_name="addresses"];
+}
+
+message DnsForwardRule {
+	repeated 	string domains = 1000 [json_name="domains"];
+	repeated 	string server_addresses = 1001 [json_name="serverAddresses"];
+}
+
 message Network {
 	optional 	string ipv4 = 1003 [json_name="ipv4"];
 	optional 	uint32 dhcpv4_start = 1012 [json_name="dhcpv4Start"];
@@ -196,6 +209,8 @@ message Network {
 	optional 	uint32 vlan = 1014 [json_name="vlan"];
 	optional 	.SpaceX.API.Device.CaptivePortal captive_portal = 1024 [json_name="captivePortal"];
 	optional 	uint32 network_groups = 1026 [json_name="networkGroups"];
+	repeated 	.SpaceX.API.Device.WifiConfig.DnsStaticEntry dns_static_entries = 1027 [json_name="dnsStaticEntries"];
+	repeated 	.SpaceX.API.Device.WifiConfig.DnsForwardRule dns_forward_rules = 1028 [json_name="dnsForwardRules"];
 }
 
 	enum Security {

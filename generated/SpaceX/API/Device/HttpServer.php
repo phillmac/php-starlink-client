@@ -29,6 +29,11 @@ class HttpServer extends \Google\Protobuf\Internal\Message
     protected $file_content_id = null;
 
     /**
+     * Generated from protobuf field <code>optional string file_content_hash = 4 [json_name = "fileContentHash"];</code>
+     */
+    protected $file_content_hash = null;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -37,6 +42,7 @@ class HttpServer extends \Google\Protobuf\Internal\Message
      * @type string $domain_name
      * @type \SpaceX\API\Device\TlsConfig $tls
      * @type string $file_content_id
+     * @type string $file_content_hash
      *              }
      */
     public function __construct($data = null)
@@ -143,6 +149,40 @@ class HttpServer extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, true);
         $this->file_content_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string file_content_hash = 4 [json_name = "fileContentHash"];</code>
+     *
+     * @return string
+     */
+    public function getFileContentHash()
+    {
+        return isset($this->file_content_hash) ? $this->file_content_hash : '';
+    }
+
+    public function hasFileContentHash()
+    {
+        return isset($this->file_content_hash);
+    }
+
+    public function clearFileContentHash()
+    {
+        unset($this->file_content_hash);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional string file_content_hash = 4 [json_name = "fileContentHash"];</code>
+     *
+     * @param  string  $var
+     * @return $this
+     */
+    public function setFileContentHash($var)
+    {
+        GPBUtil::checkString($var, true);
+        $this->file_content_hash = $var;
 
         return $this;
     }

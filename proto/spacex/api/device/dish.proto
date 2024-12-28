@@ -115,6 +115,8 @@ message DishGetStatusResponse {
 	optional 	bool high_power_test_mode = 1033 [json_name="highPowerTestMode"];
 	repeated 	string connected_routers = 1040 [json_name="connectedRouters"];
 	optional 	.SpaceX.API.Device.PLCStats plc_stats = 1041 [json_name="plcStats"];
+	optional 	bool is_moving_fast_persisted = 1042 [json_name="isMovingFastPersisted"];
+	optional 	.SpaceX.API.Device.DishUpsuStats upsu_stats = 1043 [json_name="upsuStats"];
 }
 
 message DishGetObstructionMapRequest {
@@ -190,6 +192,18 @@ message DishObstructionStats {
 	optional 	float time_obstructed = 9 [json_name="timeObstructed"];
 	optional 	float valid_s = 4 [json_name="validS"];
 	optional 	uint32 patches_valid = 10 [json_name="patchesValid"];
+	optional 	float avg_prolonged_obstruction_duration_s = 6 [json_name="avgProlongedObstructionDurationS"];
+	optional 	float avg_prolonged_obstruction_interval_s = 7 [json_name="avgProlongedObstructionIntervalS"];
+	optional 	bool avg_prolonged_obstruction_valid = 8 [json_name="avgProlongedObstructionValid"];
+}
+
+message DishUpsuStats {
+	optional 	uint64 app_version = 2 [json_name="appVersion"];
+	optional 	uint64 boot_version = 3 [json_name="bootVersion"];
+	optional 	uint64 rom_version = 4 [json_name="romVersion"];
+	optional 	int64 uptime = 5 [json_name="uptime"];
+	optional 	float dish_power = 6 [json_name="dishPower"];
+	optional 	float router_power = 7 [json_name="routerPower"];
 }
 
 message InitializationDurationSeconds {

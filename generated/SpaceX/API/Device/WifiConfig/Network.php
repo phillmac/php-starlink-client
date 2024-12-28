@@ -104,6 +104,16 @@ class Network extends \Google\Protobuf\Internal\Message
     protected $network_groups = null;
 
     /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiConfig.DnsStaticEntry dns_static_entries = 1027 [json_name = "dnsStaticEntries"];</code>
+     */
+    private $dns_static_entries;
+
+    /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiConfig.DnsForwardRule dns_forward_rules = 1028 [json_name = "dnsForwardRules"];</code>
+     */
+    private $dns_forward_rules;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -127,7 +137,9 @@ class Network extends \Google\Protobuf\Internal\Message
      * @type int $vlan
      * @type \SpaceX\API\Device\CaptivePortal $captive_portal
      * @type int $network_groups
-     *           }
+     * @type array<\SpaceX\API\Device\WifiConfig\DnsStaticEntry>|\Google\Protobuf\Internal\RepeatedField $dns_static_entries
+     * @type array<\SpaceX\API\Device\WifiConfig\DnsForwardRule>|\Google\Protobuf\Internal\RepeatedField $dns_forward_rules
+     *                                                                                                   }
      */
     public function __construct($data = null)
     {
@@ -723,6 +735,54 @@ class Network extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkUint32($var);
         $this->network_groups = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiConfig.DnsStaticEntry dns_static_entries = 1027 [json_name = "dnsStaticEntries"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDnsStaticEntries()
+    {
+        return $this->dns_static_entries;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiConfig.DnsStaticEntry dns_static_entries = 1027 [json_name = "dnsStaticEntries"];</code>
+     *
+     * @param  array<\SpaceX\API\Device\WifiConfig\DnsStaticEntry>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setDnsStaticEntries($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \SpaceX\API\Device\WifiConfig\DnsStaticEntry::class);
+        $this->dns_static_entries = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiConfig.DnsForwardRule dns_forward_rules = 1028 [json_name = "dnsForwardRules"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDnsForwardRules()
+    {
+        return $this->dns_forward_rules;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiConfig.DnsForwardRule dns_forward_rules = 1028 [json_name = "dnsForwardRules"];</code>
+     *
+     * @param  array<\SpaceX\API\Device\WifiConfig\DnsForwardRule>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setDnsForwardRules($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \SpaceX\API\Device\WifiConfig\DnsForwardRule::class);
+        $this->dns_forward_rules = $arr;
 
         return $this;
     }

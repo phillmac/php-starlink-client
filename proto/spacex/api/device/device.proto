@@ -654,6 +654,7 @@ message Location {
 	optional 	double altitude_meters = 4 [json_name="altitudeMeters"];
 	optional 	bool uncertainty_meters_valid = 5 [json_name="uncertaintyMetersValid"];
 	optional 	double uncertainty_meters = 6 [json_name="uncertaintyMeters"];
+	optional 	double gps_time_s = 7 [json_name="gpsTimeS"];
 }
 
 message AlignmentStats {
@@ -721,9 +722,10 @@ message UdpConnectivityTestRequest {
 }
 
 enum WifiClientSandboxAlert {
-	LANDING_PAGE_DOWN = 0;
-	SANDBOX_API_DOWN_GROUND = 1;
-	SANDBOX_API_DOWN_STARLINK = 2;
+	SANDBOX_ALERT_UNKNOWN = 0;
+	SANDBOX_ALERT_PORTAL = 1;
+	SANDBOX_ALERT_GROUND_API = 2;
+	SANDBOX_ALERT_STARLINK_API = 3;
 }
 
 enum PositionSource {

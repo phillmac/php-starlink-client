@@ -244,9 +244,9 @@ class WifiClient extends \Google\Protobuf\Internal\Message
     protected $client_id = null;
 
     /**
-     * Generated from protobuf field <code>optional string sandbox_client_id = 51 [json_name = "sandboxClientId"];</code>
+     * Generated from protobuf field <code>optional string captive_client_id = 53 [json_name = "captiveClientId"];</code>
      */
-    protected $sandbox_client_id = null;
+    protected $captive_client_id = null;
 
     /**
      * Generated from protobuf field <code>optional .SpaceX.API.Device.WifiClient.FqcodelInfo fqcodel_info = 44 [json_name = "fqcodelInfo"];</code>
@@ -310,7 +310,7 @@ class WifiClient extends \Google\Protobuf\Internal\Message
      * @type \SpaceX\API\Device\WifiClient\PingMetrics $ping_metrics
      * @type bool $blocked
      * @type int $client_id
-     * @type string $sandbox_client_id
+     * @type string $captive_client_id
      * @type \SpaceX\API\Device\WifiClient\FqcodelInfo $fqcodel_info
      * @type \SpaceX\API\Device\WifiClient\Alerts $alerts
      *                                            }
@@ -1876,35 +1876,35 @@ class WifiClient extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional string sandbox_client_id = 51 [json_name = "sandboxClientId"];</code>
+     * Generated from protobuf field <code>optional string captive_client_id = 53 [json_name = "captiveClientId"];</code>
      *
      * @return string
      */
-    public function getSandboxClientId()
+    public function getCaptiveClientId()
     {
-        return isset($this->sandbox_client_id) ? $this->sandbox_client_id : '';
+        return isset($this->captive_client_id) ? $this->captive_client_id : '';
     }
 
-    public function hasSandboxClientId()
+    public function hasCaptiveClientId()
     {
-        return isset($this->sandbox_client_id);
+        return isset($this->captive_client_id);
     }
 
-    public function clearSandboxClientId()
+    public function clearCaptiveClientId()
     {
-        unset($this->sandbox_client_id);
+        unset($this->captive_client_id);
     }
 
     /**
-     * Generated from protobuf field <code>optional string sandbox_client_id = 51 [json_name = "sandboxClientId"];</code>
+     * Generated from protobuf field <code>optional string captive_client_id = 53 [json_name = "captiveClientId"];</code>
      *
      * @param  string  $var
      * @return $this
      */
-    public function setSandboxClientId($var)
+    public function setCaptiveClientId($var)
     {
         GPBUtil::checkString($var, true);
-        $this->sandbox_client_id = $var;
+        $this->captive_client_id = $var;
 
         return $this;
     }
