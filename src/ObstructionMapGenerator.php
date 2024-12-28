@@ -140,8 +140,8 @@ class ObstructionMapGenerator
         $height = $this->mapData['numRows'];
 
         // Calculate min and max values
-        $min = min($snr); // -1
-        $max = max($snr); // 1
+        $min = 0;
+        $max = 1;
 
         $range = $max - $min;
 
