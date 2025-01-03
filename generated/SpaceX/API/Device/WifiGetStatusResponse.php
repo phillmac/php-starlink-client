@@ -179,6 +179,11 @@ class WifiGetStatusResponse extends \Google\Protobuf\Internal\Message
     protected $setup_requirement = null;
 
     /**
+     * Generated from protobuf field <code>optional float secs_since_last_public_ipv4_change = 1030 [json_name = "secsSinceLastPublicIpv4Change"];</code>
+     */
+    protected $secs_since_last_public_ipv4_change = null;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -217,7 +222,8 @@ class WifiGetStatusResponse extends \Google\Protobuf\Internal\Message
      * @type int|string $utc_ns
      * @type \SpaceX\API\Device\WifiSoftwareUpdateStats $software_update_stats
      * @type \SpaceX\API\Device\WifiSetupRequirement $setup_requirement
-     *                                               }
+     * @type float $secs_since_last_public_ipv4_change
+     *             }
      */
     public function __construct($data = null)
     {
@@ -1313,6 +1319,40 @@ class WifiGetStatusResponse extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \SpaceX\API\Device\WifiSetupRequirement::class);
         $this->setup_requirement = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional float secs_since_last_public_ipv4_change = 1030 [json_name = "secsSinceLastPublicIpv4Change"];</code>
+     *
+     * @return float
+     */
+    public function getSecsSinceLastPublicIpv4Change()
+    {
+        return isset($this->secs_since_last_public_ipv4_change) ? $this->secs_since_last_public_ipv4_change : 0.0;
+    }
+
+    public function hasSecsSinceLastPublicIpv4Change()
+    {
+        return isset($this->secs_since_last_public_ipv4_change);
+    }
+
+    public function clearSecsSinceLastPublicIpv4Change()
+    {
+        unset($this->secs_since_last_public_ipv4_change);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional float secs_since_last_public_ipv4_change = 1030 [json_name = "secsSinceLastPublicIpv4Change"];</code>
+     *
+     * @param  float  $var
+     * @return $this
+     */
+    public function setSecsSinceLastPublicIpv4Change($var)
+    {
+        GPBUtil::checkFloat($var);
+        $this->secs_since_last_public_ipv4_change = $var;
 
         return $this;
     }

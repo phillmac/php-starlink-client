@@ -74,6 +74,16 @@ class DishConfig extends \Google\Protobuf\Internal\Message
     protected $apply_power_save_mode = null;
 
     /**
+     * Generated from protobuf field <code>optional uint32 swupdate_reboot_hour = 9 [json_name = "swupdateRebootHour"];</code>
+     */
+    protected $swupdate_reboot_hour = null;
+
+    /**
+     * Generated from protobuf field <code>optional bool apply_swupdate_reboot_hour = 9001 [json_name = "applySwupdateRebootHour"];</code>
+     */
+    protected $apply_swupdate_reboot_hour = null;
+
+    /**
      * Generated from protobuf field <code>optional bool swupdate_three_day_deferral_enabled = 7 [json_name = "swupdateThreeDayDeferralEnabled"];</code>
      */
     protected $swupdate_three_day_deferral_enabled = null;
@@ -111,6 +121,8 @@ class DishConfig extends \Google\Protobuf\Internal\Message
      * @type bool $apply_power_save_duration_minutes
      * @type bool $power_save_mode
      * @type bool $apply_power_save_mode
+     * @type int $swupdate_reboot_hour
+     * @type bool $apply_swupdate_reboot_hour
      * @type bool $swupdate_three_day_deferral_enabled
      * @type bool $apply_swupdate_three_day_deferral_enabled
      * @type int $asset_class
@@ -527,6 +539,74 @@ class DishConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->apply_power_save_mode = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 swupdate_reboot_hour = 9 [json_name = "swupdateRebootHour"];</code>
+     *
+     * @return int
+     */
+    public function getSwupdateRebootHour()
+    {
+        return isset($this->swupdate_reboot_hour) ? $this->swupdate_reboot_hour : 0;
+    }
+
+    public function hasSwupdateRebootHour()
+    {
+        return isset($this->swupdate_reboot_hour);
+    }
+
+    public function clearSwupdateRebootHour()
+    {
+        unset($this->swupdate_reboot_hour);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint32 swupdate_reboot_hour = 9 [json_name = "swupdateRebootHour"];</code>
+     *
+     * @param  int  $var
+     * @return $this
+     */
+    public function setSwupdateRebootHour($var)
+    {
+        GPBUtil::checkUint32($var);
+        $this->swupdate_reboot_hour = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool apply_swupdate_reboot_hour = 9001 [json_name = "applySwupdateRebootHour"];</code>
+     *
+     * @return bool
+     */
+    public function getApplySwupdateRebootHour()
+    {
+        return isset($this->apply_swupdate_reboot_hour) ? $this->apply_swupdate_reboot_hour : false;
+    }
+
+    public function hasApplySwupdateRebootHour()
+    {
+        return isset($this->apply_swupdate_reboot_hour);
+    }
+
+    public function clearApplySwupdateRebootHour()
+    {
+        unset($this->apply_swupdate_reboot_hour);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool apply_swupdate_reboot_hour = 9001 [json_name = "applySwupdateRebootHour"];</code>
+     *
+     * @param  bool  $var
+     * @return $this
+     */
+    public function setApplySwupdateRebootHour($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->apply_swupdate_reboot_hour = $var;
 
         return $this;
     }
