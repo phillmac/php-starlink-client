@@ -15,11 +15,18 @@ if (class_exists('\NunoMaduro\Collision\Provider')) {
 }
 
 $dishy = new Dishy;
-$history = $dishy->getStatsHistory();
 
-foreach ($history as $key => $value) {
-    echo $key.': '.(is_array($value) ? count($value) : $value).PHP_EOL;
-}
+$dishy->stow();
+
+sleep(10);
+
+$dishy->unstow();
+
+// $history = $dishy->getStatsHistory();
+
+// foreach ($history as $key => $value) {
+//     echo $key.': '.(is_array($value) ? count($value) : $value).PHP_EOL;
+// }
 
 // dump($history['outages']);
 

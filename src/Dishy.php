@@ -70,7 +70,7 @@ class Dishy
         /** @var object{code: int, details: string, metadata:array} $status */
         [$response, $status] = $this->client->Handle(
             argument: new Request([
-                self::getRequestKey($request) => new $request,
+                self::getRequestKey($request) => $request,
             ]),
             options: $options
         )->wait();
@@ -172,6 +172,7 @@ class Dishy
         return $array;
     }
 
+    // Can take a few seconds
     public function unstow(): void
     {
         $this->stow(false);
@@ -179,9 +180,13 @@ class Dishy
 
     public function stow(bool $stow = true): void
     {
-        $this->handle(new DishStowRequest(
-            array_filter(['unstow' => ! $stow])
-        ));
+        $request = new DishStowRequest;
+
+        if ($stow === false) {
+            $request->setUnstow(true);
+        }
+
+        $this->handle($request, timeout: 5);
     }
 
     public function reboot(): void
