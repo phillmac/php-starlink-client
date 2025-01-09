@@ -17,8 +17,6 @@ message DishConfig {
 	optional 	bool apply_power_save_duration_minutes = 5001 [json_name="applyPowerSaveDurationMinutes"];
 	optional 	bool power_save_mode = 6 [json_name="powerSaveMode"];
 	optional 	bool apply_power_save_mode = 6001 [json_name="applyPowerSaveMode"];
-	optional 	uint32 swupdate_reboot_hour = 9 [json_name="swupdateRebootHour"];
-	optional 	bool apply_swupdate_reboot_hour = 9001 [json_name="applySwupdateRebootHour"];
 	optional 	bool swupdate_three_day_deferral_enabled = 7 [json_name="swupdateThreeDayDeferralEnabled"];
 	optional 	bool apply_swupdate_three_day_deferral_enabled = 7001 [json_name="applySwupdateThreeDayDeferralEnabled"];
 	optional 	uint32 asset_class = 8 [json_name="assetClass"];

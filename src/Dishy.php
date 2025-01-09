@@ -7,6 +7,7 @@ use const Grpc\STATUS_PERMISSION_DENIED;
 
 use Google\Protobuf\Internal\Message;
 use Grpc\ChannelCredentials;
+use SpaceX\API\Device\ClientName;
 use SpaceX\API\Device\DeviceClient;
 use SpaceX\API\Device\DishClearObstructionMapRequest;
 use SpaceX\API\Device\DishConfig;
@@ -20,6 +21,12 @@ use SpaceX\API\Device\PositionSource;
 use SpaceX\API\Device\RebootRequest;
 use SpaceX\API\Device\Request;
 use SpaceX\API\Device\Response;
+use SpaceX\API\Device\WifiConfig;
+use SpaceX\API\Device\WifiGetClientHistoryRequest;
+use SpaceX\API\Device\WifiGetClientsRequest;
+use SpaceX\API\Device\WifiGetConfigRequest;
+use SpaceX\API\Device\WifiSetClientGivenNameRequest;
+use SpaceX\API\Device\WifiSetConfigRequest;
 use SRWieZ\StarlinkClient\Exceptions\GrpcCallFailedException;
 use SRWieZ\StarlinkClient\Exceptions\PermissionDeniedException;
 
@@ -273,6 +280,62 @@ class Dishy
             array_slice($array, 0, $startIndex)
         );
     }
+
+    public function getWifiConfig(): array
+    {
+        return self::responseToArray(
+            $this->handle(new WifiGetConfigRequest, 10)->getWifiGetConfig()
+        );
+    }
+
+    public function getWifiClients(): array
+    {
+        return self::responseToArray(
+            $this->handle(new WifiGetClientsRequest, 10)->getWifiGetClients()
+        );
+    }
+
+    public function getWifiGetClientHistory(
+        string $mac_address = '',
+        string $client_id = ''
+    ): array {
+        return self::responseToArray(
+            $this->handle(new WifiGetClientHistoryRequest(
+                array_filter([
+                    'mac_address' => $mac_address,
+                    'client_id' => $client_id,
+                ])
+            ), 10)->getWifiGetClientHistory()
+        );
+    }
+
+    // public function setDnsRouter()
+    // {
+    //     $request = new WifiSetConfigRequest();
+    //     $config = new WifiConfig();
+    //
+    //     $request->setWifiConfig($config);
+    //
+    //     $this->handle($request);
+    // }
+
+    // reboot like the other method
+    // public function wifiReboot()
+    // {
+    //     $this->handle(new Re);
+    // }
+
+    // public function setClientName(
+    //     string $mac_address,
+    //     string $given_name,
+    // ) {
+    //     $this->handle(new WifiSetClientGivenNameRequest([
+    //         'client_name' => new ClientName([
+    //             'mac_address' => $mac_address,
+    //             'given_name'        => $given_name
+    //         ]),
+    //     ]), 10);
+    // }
 
     public function __destruct()
     {

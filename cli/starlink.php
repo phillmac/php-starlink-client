@@ -14,13 +14,13 @@ if (class_exists('\NunoMaduro\Collision\Provider')) {
     (new \NunoMaduro\Collision\Provider)->register();
 }
 
-$dishy = new Dishy;
+$dishy = new Dishy('192.168.1.1:9000');
 
-$dishy->stow();
-
-sleep(10);
-
-$dishy->unstow();
+// $dishy->stow();
+//
+// sleep(10);
+//
+// $dishy->unstow();
 
 // $history = $dishy->getStatsHistory();
 
@@ -30,13 +30,29 @@ $dishy->unstow();
 
 // dump($history['outages']);
 
-dump($dishy->getAlerts());
+// dd($dishy->setClientName(
+//     mac_address: '74:24:9f:77:eb:88',
+//     given_name: 'MacBookPro Corentin',
+// ));
+dump($dishy->getWifiClients());
+// dd($dishy->getWifiGetClientHistory(
+//         mac_address: '74:24:9f:77:eb:88',
+// ));
+// dd($dishy->getWifiGetClientHistory(
+//         client_id: '1172153257',
+// ));
+// dump($dishy->getAlerts());
 // dump($dishy->getObstructionMap());
 // $dishy->setSleepModeConfig(
 //     start: 120,
 //     duration: 2,
 // );
 // dump($dishy->getStatus());
+
+// when there is a wifi
+//   "connectedRouters" => array:1 [
+//     0 => "Router-010000000000000000E7EB88"
+//   ]
 
 // $obsMap = $dishy->getObstructionMap();
 //

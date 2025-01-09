@@ -189,23 +189,6 @@ message WifiGetHistoryResponse {
 	optional 	uint64 current = 1 [json_name="current"];
 	repeated 	float ping_drop_rate = 1001 [json_name="pingDropRate"];
 	repeated 	float ping_latency_ms = 1002 [json_name="pingLatencyMs"];
-	optional 	uint64 current_index_15s = 2 [json_name="currentIndex15s"];
-	repeated 	float pop_ipv4_ping_drop_rate_last_15s = 1003 [json_name="popIpv4PingDropRateLast15s"];
-	repeated 	float pop_ipv6_ping_drop_rate_last_15s = 1004 [json_name="popIpv6PingDropRateLast15s"];
-	repeated 	float google_ipv4_ping_drop_rate_last_15s = 1005 [json_name="googleIpv4PingDropRateLast15s"];
-	repeated 	float google_ipv6_ping_drop_rate_last_15s = 1006 [json_name="googleIpv6PingDropRateLast15s"];
-	repeated 	float cloudflare_ipv4_ping_drop_rate_last_15s = 1007 [json_name="cloudflareIpv4PingDropRateLast15s"];
-	repeated 	float cloudflare_ipv6_ping_drop_rate_last_15s = 1008 [json_name="cloudflareIpv6PingDropRateLast15s"];
-	repeated 	.SpaceX.API.Device.WifiGetHistoryResponse.DnsResolverDropRateEntry dns_resolver_drop_rate = 1009 [json_name="dnsResolverDropRate"];
-message DnsResolverHistory {
-	repeated 	float drop_rate_last_15s = 2 [json_name="dropRateLast15s"];
-}
-
-message DnsResolverDropRateEntry {
-	optional 	string key = 1 [json_name="key"];
-	optional 	.SpaceX.API.Device.WifiGetHistoryResponse.DnsResolverHistory value = 2 [json_name="value"];
-}
-
 }
 
 message WifiNewClientConnectedEvent {
@@ -407,7 +390,6 @@ message WifiGetStatusResponse {
 	optional 	int64 utc_ns = 1024 [json_name="utcNs"];
 	optional 	.SpaceX.API.Device.WifiSoftwareUpdateStats software_update_stats = 1025 [json_name="softwareUpdateStats"];
 	optional 	.SpaceX.API.Device.WifiSetupRequirement setup_requirement = 1026 [json_name="setupRequirement"];
-	optional 	float secs_since_last_public_ipv4_change = 1030 [json_name="secsSinceLastPublicIpv4Change"];
 }
 
 message WifiAuthenticateRequest {
