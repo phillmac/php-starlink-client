@@ -3,6 +3,7 @@
 
 use SRWieZ\StarlinkClient\Dishy;
 use SRWieZ\StarlinkClient\ObstructionMapGenerator;
+use SRWieZ\StarlinkClient\Wifi;
 
 error_reporting(E_ALL ^ E_DEPRECATED ^ E_NOTICE);
 
@@ -14,7 +15,8 @@ if (class_exists('\NunoMaduro\Collision\Provider')) {
     (new \NunoMaduro\Collision\Provider)->register();
 }
 
-$dishy = new Dishy('192.168.1.1:9000');
+$dishy = new Dishy;
+$wifi = new Wifi;
 
 // $dishy->stow();
 //
@@ -30,15 +32,15 @@ $dishy = new Dishy('192.168.1.1:9000');
 
 // dump($history['outages']);
 
-// dd($dishy->setClientName(
+// dd($wifi->setClientName(
 //     mac_address: '74:24:9f:77:eb:88',
 //     given_name: 'MacBookPro Corentin',
 // ));
-dump($dishy->getWifiClients());
-// dd($dishy->getWifiGetClientHistory(
+dump($wifi->getClients());
+// dd($wifi->getWifiGetClientHistory(
 //         mac_address: '74:24:9f:77:eb:88',
 // ));
-// dd($dishy->getWifiGetClientHistory(
+// dd($wifi->getWifiGetClientHistory(
 //         client_id: '1172153257',
 // ));
 // dump($dishy->getAlerts());
@@ -47,7 +49,7 @@ dump($dishy->getWifiClients());
 //     start: 120,
 //     duration: 2,
 // );
-// dump($dishy->getStatus());
+dump($dishy->getStatus());
 
 // when there is a wifi
 //   "connectedRouters" => array:1 [
