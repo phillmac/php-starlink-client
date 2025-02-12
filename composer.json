@@ -21,7 +21,7 @@
   ],
   "minimum-stability": "stable",
   "require": {
-    "php": "^8.3",
+    "php": "^8.0",
     "ext-grpc": "*",
     "google/protobuf": "^4.28",
     "grpc/grpc": "^1.57"
