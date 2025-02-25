@@ -172,6 +172,7 @@ message SoftwareUpdateStats {
 	optional 	.SpaceX.API.Device.SoftwareUpdateState software_update_state = 1 [json_name="softwareUpdateState"];
 	optional 	float software_update_progress = 2 [json_name="softwareUpdateProgress"];
 	optional 	bool update_requires_reboot = 3 [json_name="updateRequiresReboot"];
+	optional 	int64 reboot_scheduled_utc_time = 4 [json_name="rebootScheduledUtcTime"];
 }
 
 message AlignmentStats {

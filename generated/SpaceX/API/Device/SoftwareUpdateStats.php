@@ -29,6 +29,11 @@ class SoftwareUpdateStats extends \Google\Protobuf\Internal\Message
     protected $update_requires_reboot = null;
 
     /**
+     * Generated from protobuf field <code>optional int64 reboot_scheduled_utc_time = 4 [json_name = "rebootScheduledUtcTime"];</code>
+     */
+    protected $reboot_scheduled_utc_time = null;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -37,7 +42,8 @@ class SoftwareUpdateStats extends \Google\Protobuf\Internal\Message
      * @type int $software_update_state
      * @type float $software_update_progress
      * @type bool $update_requires_reboot
-     *            }
+     * @type int|string $reboot_scheduled_utc_time
+     *                  }
      */
     public function __construct($data = null)
     {
@@ -143,6 +149,40 @@ class SoftwareUpdateStats extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->update_requires_reboot = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int64 reboot_scheduled_utc_time = 4 [json_name = "rebootScheduledUtcTime"];</code>
+     *
+     * @return int|string
+     */
+    public function getRebootScheduledUtcTime()
+    {
+        return isset($this->reboot_scheduled_utc_time) ? $this->reboot_scheduled_utc_time : 0;
+    }
+
+    public function hasRebootScheduledUtcTime()
+    {
+        return isset($this->reboot_scheduled_utc_time);
+    }
+
+    public function clearRebootScheduledUtcTime()
+    {
+        unset($this->reboot_scheduled_utc_time);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional int64 reboot_scheduled_utc_time = 4 [json_name = "rebootScheduledUtcTime"];</code>
+     *
+     * @param  int|string  $var
+     * @return $this
+     */
+    public function setRebootScheduledUtcTime($var)
+    {
+        GPBUtil::checkInt64($var);
+        $this->reboot_scheduled_utc_time = $var;
 
         return $this;
     }

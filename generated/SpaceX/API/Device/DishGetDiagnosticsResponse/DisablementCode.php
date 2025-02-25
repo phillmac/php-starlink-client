@@ -39,11 +39,6 @@ class DisablementCode
     const IN_OCEAN = 4;
 
     /**
-     * Generated from protobuf enum <code>INVALID_COUNTRY = 5;</code>
-     */
-    const INVALID_COUNTRY = 5;
-
-    /**
      * Generated from protobuf enum <code>BLOCKED_COUNTRY = 6;</code>
      */
     const BLOCKED_COUNTRY = 6;
@@ -84,7 +79,6 @@ class DisablementCode
         self::NO_ACTIVE_ACCOUNT => 'NO_ACTIVE_ACCOUNT',
         self::TOO_FAR_FROM_SERVICE_ADDRESS => 'TOO_FAR_FROM_SERVICE_ADDRESS',
         self::IN_OCEAN => 'IN_OCEAN',
-        self::INVALID_COUNTRY => 'INVALID_COUNTRY',
         self::BLOCKED_COUNTRY => 'BLOCKED_COUNTRY',
         self::DATA_OVERAGE_SANDBOX_POLICY => 'DATA_OVERAGE_SANDBOX_POLICY',
         self::CELL_IS_DISABLED => 'CELL_IS_DISABLED',

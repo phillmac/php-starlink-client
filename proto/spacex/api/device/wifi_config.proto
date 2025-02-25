@@ -29,6 +29,7 @@ message HttpServer {
 	optional 	.SpaceX.API.Device.TlsConfig tls = 2 [json_name="tls"];
 	optional 	string file_content_id = 3 [json_name="fileContentId"];
 	optional 	string file_content_hash = 4 [json_name="fileContentHash"];
+	repeated 	string access_control_allow_origins = 5 [json_name="accessControlAllowOrigins"];
 }
 
 message CaptivePortal {
@@ -154,6 +155,8 @@ message WifiConfig {
 	optional 	bool apply_disable_band_steering = 1109 [json_name="applyDisableBandSteering"];
 	repeated 	string only_overflight_countries = 1110 [json_name="onlyOverflightCountries"];
 	optional 	bool apply_only_overflight_countries = 1111 [json_name="applyOnlyOverflightCountries"];
+	repeated 	.SpaceX.API.Device.WifiConfig.UnbridgedEthPort unbridged_eth_ports = 1112 [json_name="unbridgedEthPorts"];
+	optional 	bool apply_unbridged_eth_ports = 1113 [json_name="applyUnbridgedEthPorts"];
 	optional 	uint32 tag = 78 [json_name="tag"];
 message MeshConfigsEntry {
 	optional 	string key = 1 [json_name="key"];
@@ -211,6 +214,18 @@ message Network {
 	optional 	uint32 network_groups = 1026 [json_name="networkGroups"];
 	repeated 	.SpaceX.API.Device.WifiConfig.DnsStaticEntry dns_static_entries = 1027 [json_name="dnsStaticEntries"];
 	repeated 	.SpaceX.API.Device.WifiConfig.DnsForwardRule dns_forward_rules = 1028 [json_name="dnsForwardRules"];
+}
+
+message UnbridgedEthPort {
+	optional 	uint32 lan_port_index = 1 [json_name="lanPortIndex"];
+	optional 	string ip = 2 [json_name="ip"];
+	optional 	string gateway = 3 [json_name="gateway"];
+	repeated 	.SpaceX.API.Device.WifiConfig.UnbridgedEthPort.StaticRoute static_routes = 4 [json_name="staticRoutes"];
+message StaticRoute {
+	optional 	string subnet = 1 [json_name="subnet"];
+	optional 	uint32 network_groups = 2 [json_name="networkGroups"];
+}
+
 }
 
 	enum Security {

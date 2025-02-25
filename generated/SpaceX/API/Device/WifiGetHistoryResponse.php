@@ -29,6 +29,46 @@ class WifiGetHistoryResponse extends \Google\Protobuf\Internal\Message
     private $ping_latency_ms;
 
     /**
+     * Generated from protobuf field <code>optional uint64 current_index_15s = 2 [json_name = "currentIndex15s"];</code>
+     */
+    protected $current_index_15s = null;
+
+    /**
+     * Generated from protobuf field <code>repeated float pop_ipv4_ping_drop_rate_last_15s = 1003 [json_name = "popIpv4PingDropRateLast15s"];</code>
+     */
+    private $pop_ipv4_ping_drop_rate_last_15s;
+
+    /**
+     * Generated from protobuf field <code>repeated float pop_ipv6_ping_drop_rate_last_15s = 1004 [json_name = "popIpv6PingDropRateLast15s"];</code>
+     */
+    private $pop_ipv6_ping_drop_rate_last_15s;
+
+    /**
+     * Generated from protobuf field <code>repeated float google_ipv4_ping_drop_rate_last_15s = 1005 [json_name = "googleIpv4PingDropRateLast15s"];</code>
+     */
+    private $google_ipv4_ping_drop_rate_last_15s;
+
+    /**
+     * Generated from protobuf field <code>repeated float google_ipv6_ping_drop_rate_last_15s = 1006 [json_name = "googleIpv6PingDropRateLast15s"];</code>
+     */
+    private $google_ipv6_ping_drop_rate_last_15s;
+
+    /**
+     * Generated from protobuf field <code>repeated float cloudflare_ipv4_ping_drop_rate_last_15s = 1007 [json_name = "cloudflareIpv4PingDropRateLast15s"];</code>
+     */
+    private $cloudflare_ipv4_ping_drop_rate_last_15s;
+
+    /**
+     * Generated from protobuf field <code>repeated float cloudflare_ipv6_ping_drop_rate_last_15s = 1008 [json_name = "cloudflareIpv6PingDropRateLast15s"];</code>
+     */
+    private $cloudflare_ipv6_ping_drop_rate_last_15s;
+
+    /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiGetHistoryResponse.DnsResolverDropRateEntry dns_resolver_drop_rate = 1009 [json_name = "dnsResolverDropRate"];</code>
+     */
+    private $dns_resolver_drop_rate;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -37,7 +77,15 @@ class WifiGetHistoryResponse extends \Google\Protobuf\Internal\Message
      * @type int|string $current
      * @type array<float>|\Google\Protobuf\Internal\RepeatedField $ping_drop_rate
      * @type array<float>|\Google\Protobuf\Internal\RepeatedField $ping_latency_ms
-     *                                                            }
+     * @type int|string $current_index_15s
+     * @type array<float>|\Google\Protobuf\Internal\RepeatedField $pop_ipv4_ping_drop_rate_last_15s
+     * @type array<float>|\Google\Protobuf\Internal\RepeatedField $pop_ipv6_ping_drop_rate_last_15s
+     * @type array<float>|\Google\Protobuf\Internal\RepeatedField $google_ipv4_ping_drop_rate_last_15s
+     * @type array<float>|\Google\Protobuf\Internal\RepeatedField $google_ipv6_ping_drop_rate_last_15s
+     * @type array<float>|\Google\Protobuf\Internal\RepeatedField $cloudflare_ipv4_ping_drop_rate_last_15s
+     * @type array<float>|\Google\Protobuf\Internal\RepeatedField $cloudflare_ipv6_ping_drop_rate_last_15s
+     * @type array<\SpaceX\API\Device\WifiGetHistoryResponse\DnsResolverDropRateEntry>|\Google\Protobuf\Internal\RepeatedField $dns_resolver_drop_rate
+     *                                                                                                                         }
      */
     public function __construct($data = null)
     {
@@ -123,6 +171,208 @@ class WifiGetHistoryResponse extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
         $this->ping_latency_ms = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint64 current_index_15s = 2 [json_name = "currentIndex15s"];</code>
+     *
+     * @return int|string
+     */
+    public function getCurrentIndex15S()
+    {
+        return isset($this->current_index_15s) ? $this->current_index_15s : 0;
+    }
+
+    public function hasCurrentIndex15S()
+    {
+        return isset($this->current_index_15s);
+    }
+
+    public function clearCurrentIndex15S()
+    {
+        unset($this->current_index_15s);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint64 current_index_15s = 2 [json_name = "currentIndex15s"];</code>
+     *
+     * @param  int|string  $var
+     * @return $this
+     */
+    public function setCurrentIndex15S($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->current_index_15s = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float pop_ipv4_ping_drop_rate_last_15s = 1003 [json_name = "popIpv4PingDropRateLast15s"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPopIpv4PingDropRateLast15S()
+    {
+        return $this->pop_ipv4_ping_drop_rate_last_15s;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float pop_ipv4_ping_drop_rate_last_15s = 1003 [json_name = "popIpv4PingDropRateLast15s"];</code>
+     *
+     * @param  array<float>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setPopIpv4PingDropRateLast15S($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->pop_ipv4_ping_drop_rate_last_15s = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float pop_ipv6_ping_drop_rate_last_15s = 1004 [json_name = "popIpv6PingDropRateLast15s"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getPopIpv6PingDropRateLast15S()
+    {
+        return $this->pop_ipv6_ping_drop_rate_last_15s;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float pop_ipv6_ping_drop_rate_last_15s = 1004 [json_name = "popIpv6PingDropRateLast15s"];</code>
+     *
+     * @param  array<float>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setPopIpv6PingDropRateLast15S($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->pop_ipv6_ping_drop_rate_last_15s = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float google_ipv4_ping_drop_rate_last_15s = 1005 [json_name = "googleIpv4PingDropRateLast15s"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getGoogleIpv4PingDropRateLast15S()
+    {
+        return $this->google_ipv4_ping_drop_rate_last_15s;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float google_ipv4_ping_drop_rate_last_15s = 1005 [json_name = "googleIpv4PingDropRateLast15s"];</code>
+     *
+     * @param  array<float>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setGoogleIpv4PingDropRateLast15S($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->google_ipv4_ping_drop_rate_last_15s = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float google_ipv6_ping_drop_rate_last_15s = 1006 [json_name = "googleIpv6PingDropRateLast15s"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getGoogleIpv6PingDropRateLast15S()
+    {
+        return $this->google_ipv6_ping_drop_rate_last_15s;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float google_ipv6_ping_drop_rate_last_15s = 1006 [json_name = "googleIpv6PingDropRateLast15s"];</code>
+     *
+     * @param  array<float>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setGoogleIpv6PingDropRateLast15S($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->google_ipv6_ping_drop_rate_last_15s = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float cloudflare_ipv4_ping_drop_rate_last_15s = 1007 [json_name = "cloudflareIpv4PingDropRateLast15s"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCloudflareIpv4PingDropRateLast15S()
+    {
+        return $this->cloudflare_ipv4_ping_drop_rate_last_15s;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float cloudflare_ipv4_ping_drop_rate_last_15s = 1007 [json_name = "cloudflareIpv4PingDropRateLast15s"];</code>
+     *
+     * @param  array<float>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setCloudflareIpv4PingDropRateLast15S($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->cloudflare_ipv4_ping_drop_rate_last_15s = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float cloudflare_ipv6_ping_drop_rate_last_15s = 1008 [json_name = "cloudflareIpv6PingDropRateLast15s"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCloudflareIpv6PingDropRateLast15S()
+    {
+        return $this->cloudflare_ipv6_ping_drop_rate_last_15s;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated float cloudflare_ipv6_ping_drop_rate_last_15s = 1008 [json_name = "cloudflareIpv6PingDropRateLast15s"];</code>
+     *
+     * @param  array<float>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setCloudflareIpv6PingDropRateLast15S($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::FLOAT);
+        $this->cloudflare_ipv6_ping_drop_rate_last_15s = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiGetHistoryResponse.DnsResolverDropRateEntry dns_resolver_drop_rate = 1009 [json_name = "dnsResolverDropRate"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getDnsResolverDropRate()
+    {
+        return $this->dns_resolver_drop_rate;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiGetHistoryResponse.DnsResolverDropRateEntry dns_resolver_drop_rate = 1009 [json_name = "dnsResolverDropRate"];</code>
+     *
+     * @param  array<\SpaceX\API\Device\WifiGetHistoryResponse\DnsResolverDropRateEntry>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setDnsResolverDropRate($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \SpaceX\API\Device\WifiGetHistoryResponse\DnsResolverDropRateEntry::class);
+        $this->dns_resolver_drop_rate = $arr;
 
         return $this;
     }

@@ -99,6 +99,11 @@ class WifiAlerts extends \Google\Protobuf\Internal\Message
     protected $poe_vin_undervoltage = null;
 
     /**
+     * Generated from protobuf field <code>optional bool sandbox_disabled = 22 [json_name = "sandboxDisabled"];</code>
+     */
+    protected $sandbox_disabled = null;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -121,6 +126,7 @@ class WifiAlerts extends \Google\Protobuf\Internal\Message
      * @type bool $poe_off_current_nominal
      * @type bool $poe_vin_overvoltage
      * @type bool $poe_vin_undervoltage
+     * @type bool $sandbox_disabled
      *            }
      */
     public function __construct($data = null)
@@ -703,6 +709,40 @@ class WifiAlerts extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->poe_vin_undervoltage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool sandbox_disabled = 22 [json_name = "sandboxDisabled"];</code>
+     *
+     * @return bool
+     */
+    public function getSandboxDisabled()
+    {
+        return isset($this->sandbox_disabled) ? $this->sandbox_disabled : false;
+    }
+
+    public function hasSandboxDisabled()
+    {
+        return isset($this->sandbox_disabled);
+    }
+
+    public function clearSandboxDisabled()
+    {
+        unset($this->sandbox_disabled);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool sandbox_disabled = 22 [json_name = "sandboxDisabled"];</code>
+     *
+     * @param  bool  $var
+     * @return $this
+     */
+    public function setSandboxDisabled($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->sandbox_disabled = $var;
 
         return $this;
     }

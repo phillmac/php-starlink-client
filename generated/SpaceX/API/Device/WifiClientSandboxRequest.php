@@ -24,6 +24,11 @@ class WifiClientSandboxRequest extends \Google\Protobuf\Internal\Message
     private $alerts;
 
     /**
+     * Generated from protobuf field <code>optional uint64 unix_timestamp_ns = 3 [json_name = "unixTimestampNs"];</code>
+     */
+    protected $unix_timestamp_ns = null;
+
+    /**
      * Constructor.
      *
      * @param  array  $data  {
@@ -31,7 +36,8 @@ class WifiClientSandboxRequest extends \Google\Protobuf\Internal\Message
      *
      * @type array<\SpaceX\API\Device\WifiClientSandboxStatus>|\Google\Protobuf\Internal\RepeatedField $client_sandbox_status
      * @type array<int>|\Google\Protobuf\Internal\RepeatedField $alerts
-     *                                                          }
+     * @type int|string $unix_timestamp_ns
+     *                  }
      */
     public function __construct($data = null)
     {
@@ -83,6 +89,40 @@ class WifiClientSandboxRequest extends \Google\Protobuf\Internal\Message
     {
         $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \SpaceX\API\Device\WifiClientSandboxAlert::class);
         $this->alerts = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint64 unix_timestamp_ns = 3 [json_name = "unixTimestampNs"];</code>
+     *
+     * @return int|string
+     */
+    public function getUnixTimestampNs()
+    {
+        return isset($this->unix_timestamp_ns) ? $this->unix_timestamp_ns : 0;
+    }
+
+    public function hasUnixTimestampNs()
+    {
+        return isset($this->unix_timestamp_ns);
+    }
+
+    public function clearUnixTimestampNs()
+    {
+        unset($this->unix_timestamp_ns);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional uint64 unix_timestamp_ns = 3 [json_name = "unixTimestampNs"];</code>
+     *
+     * @param  int|string  $var
+     * @return $this
+     */
+    public function setUnixTimestampNs($var)
+    {
+        GPBUtil::checkUint64($var);
+        $this->unix_timestamp_ns = $var;
 
         return $this;
     }

@@ -214,6 +214,11 @@ class Request extends \Google\Protobuf\Internal\Message
     protected $udp_connectivity_test = null;
 
     /**
+     * Generated from protobuf field <code>optional .SpaceX.API.Device.GetGoroutineStackTracesRequest get_goroutine_stack_traces = 1041 [json_name = "getGoroutineStackTraces"];</code>
+     */
+    protected $get_goroutine_stack_traces = null;
+
+    /**
      * Generated from protobuf field <code>optional .SpaceX.API.Device.DishStowRequest dish_stow = 2002 [json_name = "dishStow"];</code>
      */
     protected $dish_stow = null;
@@ -479,6 +484,7 @@ class Request extends \Google\Protobuf\Internal\Message
      * @type \SpaceX\API\Device\RunIperfServerRequest $run_iperf_server
      * @type \SpaceX\API\Device\TcpConnectivityTestRequest $tcp_connectivity_test
      * @type \SpaceX\API\Device\UdpConnectivityTestRequest $udp_connectivity_test
+     * @type \SpaceX\API\Device\GetGoroutineStackTracesRequest $get_goroutine_stack_traces
      * @type \SpaceX\API\Device\DishStowRequest $dish_stow
      * @type \SpaceX\API\Device\DishGetContextRequest $dish_get_context
      * @type \SpaceX\API\Device\DishGetObstructionMapRequest $dish_get_obstruction_map
@@ -1887,6 +1893,40 @@ class Request extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \SpaceX\API\Device\UdpConnectivityTestRequest::class);
         $this->udp_connectivity_test = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .SpaceX.API.Device.GetGoroutineStackTracesRequest get_goroutine_stack_traces = 1041 [json_name = "getGoroutineStackTraces"];</code>
+     *
+     * @return \SpaceX\API\Device\GetGoroutineStackTracesRequest|null
+     */
+    public function getGetGoroutineStackTraces()
+    {
+        return $this->get_goroutine_stack_traces;
+    }
+
+    public function hasGetGoroutineStackTraces()
+    {
+        return isset($this->get_goroutine_stack_traces);
+    }
+
+    public function clearGetGoroutineStackTraces()
+    {
+        unset($this->get_goroutine_stack_traces);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .SpaceX.API.Device.GetGoroutineStackTracesRequest get_goroutine_stack_traces = 1041 [json_name = "getGoroutineStackTraces"];</code>
+     *
+     * @param  \SpaceX\API\Device\GetGoroutineStackTracesRequest  $var
+     * @return $this
+     */
+    public function setGetGoroutineStackTraces($var)
+    {
+        GPBUtil::checkMessage($var, \SpaceX\API\Device\GetGoroutineStackTracesRequest::class);
+        $this->get_goroutine_stack_traces = $var;
 
         return $this;
     }

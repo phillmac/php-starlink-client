@@ -79,6 +79,7 @@ message Request {
 	optional 	.SpaceX.API.Device.RunIperfServerRequest run_iperf_server = 1038 [json_name="runIperfServer"];
 	optional 	.SpaceX.API.Device.TcpConnectivityTestRequest tcp_connectivity_test = 1039 [json_name="tcpConnectivityTest"];
 	optional 	.SpaceX.API.Device.UdpConnectivityTestRequest udp_connectivity_test = 1040 [json_name="udpConnectivityTest"];
+	optional 	.SpaceX.API.Device.GetGoroutineStackTracesRequest get_goroutine_stack_traces = 1041 [json_name="getGoroutineStackTraces"];
 	optional 	.SpaceX.API.Device.DishStowRequest dish_stow = 2002 [json_name="dishStow"];
 	optional 	.SpaceX.API.Device.DishGetContextRequest dish_get_context = 2003 [json_name="dishGetContext"];
 	optional 	.SpaceX.API.Device.DishGetObstructionMapRequest dish_get_obstruction_map = 2008 [json_name="dishGetObstructionMap"];
@@ -157,6 +158,7 @@ message Response {
 	optional 	.SpaceX.API.Device.GetRadioStatsResponse get_radio_stats = 1035 [json_name="getRadioStats"];
 	optional 	.SpaceX.API.Device.GetTimeResponse time = 1037 [json_name="time"];
 	optional 	.SpaceX.API.Device.RunIperfServerResponse run_iperf_server = 1038 [json_name="runIperfServer"];
+	optional 	.SpaceX.API.Device.GetGoroutineStackTracesResponse get_goroutine_stack_traces = 1041 [json_name="getGoroutineStackTraces"];
 	optional 	.SpaceX.API.Device.DishAuthenticateResponse dish_authenticate = 2005 [json_name="dishAuthenticate"];
 	optional 	.SpaceX.API.Device.DishGetContextResponse dish_get_context = 2003 [json_name="dishGetContext"];
 	optional 	.SpaceX.API.Device.DishGetHistoryResponse dish_get_history = 2006 [json_name="dishGetHistory"];
@@ -221,6 +223,7 @@ message WifiCloudStatusEvent {
 message WifiClientSandboxRequest {
 	repeated 	.SpaceX.API.Device.WifiClientSandboxStatus client_sandbox_status = 1 [json_name="clientSandboxStatus"];
 	repeated 	.SpaceX.API.Device.WifiClientSandboxAlert alerts = 2 [json_name="alerts"];
+	optional 	uint64 unix_timestamp_ns = 3 [json_name="unixTimestampNs"];
 }
 
 message WifiClientSandboxResponse {
@@ -675,7 +678,6 @@ message AlignmentStats {
 		NO_ACTIVE_ACCOUNT = 2;
 		TOO_FAR_FROM_SERVICE_ADDRESS = 3;
 		IN_OCEAN = 4;
-		INVALID_COUNTRY = 5;
 		BLOCKED_COUNTRY = 6;
 		DATA_OVERAGE_SANDBOX_POLICY = 7;
 		CELL_IS_DISABLED = 8;
@@ -719,6 +721,13 @@ message UdpConnectivityTestRequest {
 		NFS_PROC_NULL = 20;
 		COAP_REQUEST = 21;
 	}
+}
+
+message GetGoroutineStackTracesRequest {
+}
+
+message GetGoroutineStackTracesResponse {
+	optional 	string stack_traces = 1 [json_name="stackTraces"];
 }
 
 enum WifiClientSandboxAlert {

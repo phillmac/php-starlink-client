@@ -9,6 +9,7 @@ import "spacex/api/device/common.proto";
 import "spacex/api/device/wifi_config.proto";
 import "spacex/api/device/wifi_util.proto";
 import "spacex/api/telemetron/public/common/time.proto";
+import "spacex/api/satellites/network/ut_disablement_codes.proto";
 
 service Mesh {
 	rpc MeshStream(stream .SpaceX.API.Device.ToController) returns (stream .SpaceX.API.Device.FromController);
@@ -189,6 +190,23 @@ message WifiGetHistoryResponse {
 	optional 	uint64 current = 1 [json_name="current"];
 	repeated 	float ping_drop_rate = 1001 [json_name="pingDropRate"];
 	repeated 	float ping_latency_ms = 1002 [json_name="pingLatencyMs"];
+	optional 	uint64 current_index_15s = 2 [json_name="currentIndex15s"];
+	repeated 	float pop_ipv4_ping_drop_rate_last_15s = 1003 [json_name="popIpv4PingDropRateLast15s"];
+	repeated 	float pop_ipv6_ping_drop_rate_last_15s = 1004 [json_name="popIpv6PingDropRateLast15s"];
+	repeated 	float google_ipv4_ping_drop_rate_last_15s = 1005 [json_name="googleIpv4PingDropRateLast15s"];
+	repeated 	float google_ipv6_ping_drop_rate_last_15s = 1006 [json_name="googleIpv6PingDropRateLast15s"];
+	repeated 	float cloudflare_ipv4_ping_drop_rate_last_15s = 1007 [json_name="cloudflareIpv4PingDropRateLast15s"];
+	repeated 	float cloudflare_ipv6_ping_drop_rate_last_15s = 1008 [json_name="cloudflareIpv6PingDropRateLast15s"];
+	repeated 	.SpaceX.API.Device.WifiGetHistoryResponse.DnsResolverDropRateEntry dns_resolver_drop_rate = 1009 [json_name="dnsResolverDropRate"];
+message DnsResolverHistory {
+	repeated 	float drop_rate_last_15s = 2 [json_name="dropRateLast15s"];
+}
+
+message DnsResolverDropRateEntry {
+	optional 	string key = 1 [json_name="key"];
+	optional 	.SpaceX.API.Device.WifiGetHistoryResponse.DnsResolverHistory value = 2 [json_name="value"];
+}
+
 }
 
 message WifiNewClientConnectedEvent {
@@ -354,6 +372,7 @@ message WifiAlerts {
 	optional 	bool poe_off_current_nominal = 18 [json_name="poeOffCurrentNominal"];
 	optional 	bool poe_vin_overvoltage = 19 [json_name="poeVinOvervoltage"];
 	optional 	bool poe_vin_undervoltage = 20 [json_name="poeVinUndervoltage"];
+	optional 	bool sandbox_disabled = 22 [json_name="sandboxDisabled"];
 }
 
 message WifiGetStatusResponse {
@@ -387,9 +406,11 @@ message WifiGetStatusResponse {
 	repeated 	.SpaceX.API.Device.DhcpServer dhcp_servers = 1019 [json_name="dhcpServers"];
 	optional 	.SpaceX.API.Device.PoeStats poe_stats = 1022 [json_name="poeStats"];
 	optional 	string dish_id = 1023 [json_name="dishId"];
+	optional 	.SpaceX.API.Satellites.Network.UtDisablementCode dish_disablement_code = 1031 [json_name="dishDisablementCode"];
 	optional 	int64 utc_ns = 1024 [json_name="utcNs"];
 	optional 	.SpaceX.API.Device.WifiSoftwareUpdateStats software_update_stats = 1025 [json_name="softwareUpdateStats"];
 	optional 	.SpaceX.API.Device.WifiSetupRequirement setup_requirement = 1026 [json_name="setupRequirement"];
+	optional 	float secs_since_last_public_ipv4_change = 1030 [json_name="secsSinceLastPublicIpv4Change"];
 }
 
 message WifiAuthenticateRequest {
@@ -713,6 +734,7 @@ message starlink_routers_hourly_metrics_v2 {
 	optional 	.google.protobuf.BoolValue config_disable_mesh_onboarding = 1015 [json_name="configDisableMeshOnboarding"];
 	optional 	.google.protobuf.BoolValue config_pin_country_code = 1016 [json_name="configPinCountryCode"];
 	optional 	.google.protobuf.BoolValue config_disable_update_reboot = 1017 [json_name="configDisableUpdateReboot"];
+	optional 	.google.protobuf.BoolValue config_https_content_hosting_enabled = 1031 [json_name="configHttpsContentHostingEnabled"];
 	optional 	.google.protobuf.BoolValue config_disable_2ghz = 1018 [json_name="configDisable2ghz"];
 	optional 	.google.protobuf.BoolValue config_disable_5ghz = 1019 [json_name="configDisable5ghz"];
 	optional 	.google.protobuf.BoolValue config_disable_5ghz_high = 1029 [json_name="configDisable5ghzHigh"];

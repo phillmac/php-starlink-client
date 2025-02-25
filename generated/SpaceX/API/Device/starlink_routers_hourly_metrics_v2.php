@@ -1114,6 +1114,11 @@ class starlink_routers_hourly_metrics_v2 extends \Google\Protobuf\Internal\Messa
     protected $config_disable_update_reboot = null;
 
     /**
+     * Generated from protobuf field <code>optional .google.protobuf.BoolValue config_https_content_hosting_enabled = 1031 [json_name = "configHttpsContentHostingEnabled"];</code>
+     */
+    protected $config_https_content_hosting_enabled = null;
+
+    /**
      * Generated from protobuf field <code>optional .google.protobuf.BoolValue config_disable_2ghz = 1018 [json_name = "configDisable2ghz"];</code>
      */
     protected $config_disable_2ghz = null;
@@ -1479,6 +1484,7 @@ class starlink_routers_hourly_metrics_v2 extends \Google\Protobuf\Internal\Messa
      * @type \Google\Protobuf\BoolValue $config_disable_mesh_onboarding
      * @type \Google\Protobuf\BoolValue $config_pin_country_code
      * @type \Google\Protobuf\BoolValue $config_disable_update_reboot
+     * @type \Google\Protobuf\BoolValue $config_https_content_hosting_enabled
      * @type \Google\Protobuf\BoolValue $config_disable_2ghz
      * @type \Google\Protobuf\BoolValue $config_disable_5ghz
      * @type \Google\Protobuf\BoolValue $config_disable_5ghz_high
@@ -14904,6 +14910,67 @@ class starlink_routers_hourly_metrics_v2 extends \Google\Protobuf\Internal\Messa
     public function setConfigDisableUpdateRebootUnwrapped($var)
     {
         $this->writeWrapperValue('config_disable_update_reboot', $var);
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .google.protobuf.BoolValue config_https_content_hosting_enabled = 1031 [json_name = "configHttpsContentHostingEnabled"];</code>
+     *
+     * @return \Google\Protobuf\BoolValue|null
+     */
+    public function getConfigHttpsContentHostingEnabled()
+    {
+        return $this->config_https_content_hosting_enabled;
+    }
+
+    public function hasConfigHttpsContentHostingEnabled()
+    {
+        return isset($this->config_https_content_hosting_enabled);
+    }
+
+    public function clearConfigHttpsContentHostingEnabled()
+    {
+        unset($this->config_https_content_hosting_enabled);
+    }
+
+    /**
+     * Returns the unboxed value from <code>getConfigHttpsContentHostingEnabled()</code>
+
+     * Generated from protobuf field <code>optional .google.protobuf.BoolValue config_https_content_hosting_enabled = 1031 [json_name = "configHttpsContentHostingEnabled"];</code>
+     *
+     * @return bool|null
+     */
+    public function getConfigHttpsContentHostingEnabledUnwrapped()
+    {
+        return $this->readWrapperValue('config_https_content_hosting_enabled');
+    }
+
+    /**
+     * Generated from protobuf field <code>optional .google.protobuf.BoolValue config_https_content_hosting_enabled = 1031 [json_name = "configHttpsContentHostingEnabled"];</code>
+     *
+     * @param  \Google\Protobuf\BoolValue  $var
+     * @return $this
+     */
+    public function setConfigHttpsContentHostingEnabled($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\BoolValue::class);
+        $this->config_https_content_hosting_enabled = $var;
+
+        return $this;
+    }
+
+    /**
+     * Sets the field by wrapping a primitive type in a Google\Protobuf\BoolValue object.
+
+     * Generated from protobuf field <code>optional .google.protobuf.BoolValue config_https_content_hosting_enabled = 1031 [json_name = "configHttpsContentHostingEnabled"];</code>
+     *
+     * @param  bool|null  $var
+     * @return $this
+     */
+    public function setConfigHttpsContentHostingEnabledUnwrapped($var)
+    {
+        $this->writeWrapperValue('config_https_content_hosting_enabled', $var);
 
         return $this;
     }

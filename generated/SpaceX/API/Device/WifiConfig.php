@@ -599,6 +599,16 @@ class WifiConfig extends \Google\Protobuf\Internal\Message
     protected $apply_only_overflight_countries = null;
 
     /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiConfig.UnbridgedEthPort unbridged_eth_ports = 1112 [json_name = "unbridgedEthPorts"];</code>
+     */
+    private $unbridged_eth_ports;
+
+    /**
+     * Generated from protobuf field <code>optional bool apply_unbridged_eth_ports = 1113 [json_name = "applyUnbridgedEthPorts"];</code>
+     */
+    protected $apply_unbridged_eth_ports = null;
+
+    /**
      * Generated from protobuf field <code>optional uint32 tag = 78 [json_name = "tag"];</code>
      */
     protected $tag = null;
@@ -726,6 +736,8 @@ class WifiConfig extends \Google\Protobuf\Internal\Message
      * @type bool $apply_disable_band_steering
      * @type array<string>|\Google\Protobuf\Internal\RepeatedField $only_overflight_countries
      * @type bool $apply_only_overflight_countries
+     * @type array<\SpaceX\API\Device\WifiConfig\UnbridgedEthPort>|\Google\Protobuf\Internal\RepeatedField $unbridged_eth_ports
+     * @type bool $apply_unbridged_eth_ports
      * @type int $tag
      *           }
      */
@@ -4629,6 +4641,64 @@ class WifiConfig extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->apply_only_overflight_countries = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiConfig.UnbridgedEthPort unbridged_eth_ports = 1112 [json_name = "unbridgedEthPorts"];</code>
+     *
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getUnbridgedEthPorts()
+    {
+        return $this->unbridged_eth_ports;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated .SpaceX.API.Device.WifiConfig.UnbridgedEthPort unbridged_eth_ports = 1112 [json_name = "unbridgedEthPorts"];</code>
+     *
+     * @param  array<\SpaceX\API\Device\WifiConfig\UnbridgedEthPort>|\Google\Protobuf\Internal\RepeatedField  $var
+     * @return $this
+     */
+    public function setUnbridgedEthPorts($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::MESSAGE, \SpaceX\API\Device\WifiConfig\UnbridgedEthPort::class);
+        $this->unbridged_eth_ports = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool apply_unbridged_eth_ports = 1113 [json_name = "applyUnbridgedEthPorts"];</code>
+     *
+     * @return bool
+     */
+    public function getApplyUnbridgedEthPorts()
+    {
+        return isset($this->apply_unbridged_eth_ports) ? $this->apply_unbridged_eth_ports : false;
+    }
+
+    public function hasApplyUnbridgedEthPorts()
+    {
+        return isset($this->apply_unbridged_eth_ports);
+    }
+
+    public function clearApplyUnbridgedEthPorts()
+    {
+        unset($this->apply_unbridged_eth_ports);
+    }
+
+    /**
+     * Generated from protobuf field <code>optional bool apply_unbridged_eth_ports = 1113 [json_name = "applyUnbridgedEthPorts"];</code>
+     *
+     * @param  bool  $var
+     * @return $this
+     */
+    public function setApplyUnbridgedEthPorts($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->apply_unbridged_eth_ports = $var;
 
         return $this;
     }
