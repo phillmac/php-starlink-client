@@ -12,6 +12,9 @@ use SpaceX\API\Device\Request;
 use SpaceX\API\Device\Response;
 use SRWieZ\StarlinkClient\Exceptions\GrpcCallFailedException;
 use SRWieZ\StarlinkClient\Exceptions\PermissionDeniedException;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class GrpcClient
 {
@@ -81,9 +84,17 @@ class GrpcClient
             return [];
         }
 
-        return (array) json_decode(
-            json: $response->serializeToJsonString(),
-            associative: true,
+        $serializer = new Serializer(
+            normalizers: [new ObjectNormalizer],
+            encoders: [new JsonEncoder]
+        );
+
+        return $serializer->normalize(
+            data: $response,
+            format: 'json',
+            context: [
+                'json_encode_options' => JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT,
+            ]
         );
     }
 
