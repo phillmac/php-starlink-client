@@ -1,5 +1,5 @@
 {
-  "name": "srwiez/starlink-client",
+  "name": "phillmac/starlink-client",
   "description": "Starlink PHP Client using local gRPC communication",
   "type": "library",
   "license": "MIT",
