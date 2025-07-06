@@ -25,9 +25,17 @@
     "php": "^8.0",
     "ext-grpc": "*",
     "google/protobuf": "^4.28",
-    "grpc/grpc": "^1.57"
+    "grpc/grpc": "^1.57",
+    "symfony/serializer": "^5.4",
+    "symfony/property-access": "^6.4"
   },
   "require-dev": {
+    "laravel/pint": "^1.18",
+    "pestphp/pest": "^3.5",
+    "phpstan/phpstan": "^2.0",
+    "srwiez/grpc-protoset": "^1.0",
+    "symfony/var-dumper": "^7.1",
+    "nunomaduro/collision": "^8.5"
   },
   "config": {
     "allow-plugins": {
